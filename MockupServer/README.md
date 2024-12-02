@@ -20,3 +20,4 @@ There are:
 * EC2 instances with CloudWatch & Systems Manager Agents
 * Step Function which runs test application and Lambda functions
 
+<img src="MockupDBServer test diagram.jpg" width="600" />

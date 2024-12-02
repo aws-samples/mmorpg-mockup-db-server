@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "MockupServer": {
+      "commandName": "Project",
+      "commandLineArgs": "1"
+    }
+  }
+}

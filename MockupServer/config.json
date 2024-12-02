@@ -1,0 +1,67 @@
+{
+	"ConnectDB": "MSSQL or MySQL",
+	"ConnectString": "Server = 127.0.0.1; Database = MockDB; User Id = testuser; Password = flfhelem1!; TrustServerCertificate = True; Connect Timeout = 60",
+	"ConnectString_MSSQL": "Server = 127.0.0.1; Database = MockDB; User Id = testuser; Password = flfhelem1!; Max Pool Size = 500; TrustServerCertificate = True; Connect Timeout = 60",
+	"ConnectString_MySQL": "Server=127.0.0.1;Database=mockdb;Uid=admin;Pwd=flfhelem1!;Max Pool Size = 500;",
+	"MaxThreadCount": 1,
+	"TestTimeMS": 1,
+	"MethodType": "JSON or TemporaryTable(Only MySQL)",
+	"EC2Index": 0,
+	"LogFile": "log.txt",
+	"GuidProcessIndex": 10000000000000000,
+	"Script": [
+		{
+			"Index": 0,
+			"Procedures": [
+				{ "Name": "AccountLogin" }
+			]
+		},
+		{
+			"Index": 1,
+			"Procedures": [
+				{ "Name": "CharacterCreateOrLogin" }
+			]
+		},
+		{
+			"Index": 2,
+			"Count": 1000,
+			"DelayMS": 300,
+			"Procedures": [
+				{
+					"Name": "HeroGacha",
+					"Probability": 500
+				},
+				{
+					"Name": "MonsterDrop",
+					"Probability": 7000
+				},
+				{
+					"Name": "QuestReward",
+					"Probability": 500
+				},
+				{
+					"Name": "AchievementReward",
+					"Probability": 500
+				},
+				{
+					"Name": "ItemExpChange",
+					"Probability": 500
+				},
+				{
+					"Name": "EquipChange",
+					"Probability": 500
+				},
+				{
+					"Name": "ItemGacha",
+					"Probability": 500
+				}
+			]
+		},
+		{
+			"Index": 3,
+			"Procedures": [
+				{ "Name": "AccountLogout" }
+			]
+		}
+	]
+}

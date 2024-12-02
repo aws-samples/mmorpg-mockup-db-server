@@ -1,0 +1,3326 @@
+---
+Metadata:
+  AWSToolsMetrics:
+    IaC_Generator: "arn:aws:cloudformation:ap-northeast-2:965037532757:generatedTemplate/f80a7be3-b1af-4501-a8d0-7b98da23d452"
+Parameters:
+  DBUserName:
+    NoEcho: "true"
+    Type: "String"
+    Description: "Database user name"
+  LambdaFunction00mockupservertestreport00PvArvCodeS3KeyaOoaw:
+    NoEcho: "true"
+    Type: "String"
+    Description: "The Amazon S3 key of the deployment package."
+  LambdaFunction00mockupservertestreport00PvArvCodeS3Bucket721TM:
+    NoEcho: "true"
+    Type: "String"
+    Description: "An Amazon S3 bucket in the same AWS-Region as your function. The\
+      \ bucket can be in a different AWS-account."
+  LambdaFunction00mockupservertestprerequisites00ioC8DCodeS3KeyQqhA0:
+    NoEcho: "true"
+    Type: "String"
+    Description: "The Amazon S3 key of the deployment package."
+  LambdaFunction00mockupservertestprerequisites00ioC8DCodeZipFile6a610:
+    NoEcho: "true"
+    Type: "String"
+    Description: "(Node.js and Python) The source code of your Lambda function. If\
+      \ you include your function source inline with this parameter, CFN places it\
+      \ in a file named ``index`` and zips it to create a [deployment package](https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-package.html).\
+      \ This zip file cannot exceed 4MB. For the ``Handler`` property, the first part\
+      \ of the handler identifier must be ``index``. For example, ``index.handler``.\n\
+      \  For JSON, you must escape quotes and special characters such as newline (``\\\
+      n``) with a backslash.\n If you specify a function that interacts with an AWS\
+      \ CloudFormation custom resource, you don't have to write your own functions\
+      \ to send responses to the custom resource that invoked the function. AWS CloudFormation\
+      \ provides a response module ([cfn-response](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-lambda-function-code-cfnresponsemodule.html))\
+      \ that simplifies sending responses. See [Using Lambda with CloudFormation](https://docs.aws.amazon.com/lambda/latest/dg/services-cloudformation.html)\
+      \ for details."
+  LambdaFunction00mockupservertestprerequisites00ioC8DCodeS3ObjectVersionMzG6Q:
+    NoEcho: "true"
+    Type: "String"
+    Description: "For versioned objects, the version of the deployment package object\
+      \ to use."
+  LambdaFunction00mockupservertestprerequisites00ioC8DCodeSourceKMSKeyArnoKqWj:
+    NoEcho: "true"
+    Type: "String"
+    Description: "Value of write only property Code/SourceKMSKeyArn of resource LambdaFunction00mockupservertestprerequisites00ioC8D."
+  LambdaFunction00mockupservertestreport00PvArvCodeZipFileOjC3T:
+    NoEcho: "true"
+    Type: "String"
+    Description: "(Node.js and Python) The source code of your Lambda function. If\
+      \ you include your function source inline with this parameter, CFN places it\
+      \ in a file named ``index`` and zips it to create a [deployment package](https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-package.html).\
+      \ This zip file cannot exceed 4MB. For the ``Handler`` property, the first part\
+      \ of the handler identifier must be ``index``. For example, ``index.handler``.\n\
+      \  For JSON, you must escape quotes and special characters such as newline (``\\\
+      n``) with a backslash.\n If you specify a function that interacts with an AWS\
+      \ CloudFormation custom resource, you don't have to write your own functions\
+      \ to send responses to the custom resource that invoked the function. AWS CloudFormation\
+      \ provides a response module ([cfn-response](https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/cfn-lambda-function-code-cfnresponsemodule.html))\
+      \ that simplifies sending responses. See [Using Lambda with CloudFormation](https://docs.aws.amazon.com/lambda/latest/dg/services-cloudformation.html)\
+      \ for details."
+  LambdaFunction00mockupservertestreport00PvArvCodeImageUritFQF5:
+    NoEcho: "true"
+    Type: "String"
+    Description: "URI of a [container image](https://docs.aws.amazon.com/lambda/latest/dg/lambda-images.html)\
+      \ in the Amazon ECR registry."
+  LambdaFunction00mockupservertestreport00PvArvCodeSourceKMSKeyArnjamfu:
+    NoEcho: "true"
+    Type: "String"
+    Description: "Value of write only property Code/SourceKMSKeyArn of resource LambdaFunction00mockupservertestreport00PvArv."
+  LambdaFunction00mockupservertestprerequisites00ioC8DCodeS3BucketjXKKm:
+    NoEcho: "true"
+    Type: "String"
+    Description: "An Amazon S3 bucket in the same AWS-Region as your function. The\
+      \ bucket can be in a different AWS-account."
+  LambdaFunction00mockupservertestprerequisites00ioC8DCodeImageUri1rZDS:
+    NoEcho: "true"
+    Type: "String"
+    Description: "URI of a [container image](https://docs.aws.amazon.com/lambda/latest/dg/lambda-images.html)\
+      \ in the Amazon ECR registry."
+  LambdaFunction00mockupservertestreport00PvArvCodeS3ObjectVersionMwExV:
+    NoEcho: "true"
+    Type: "String"
+    Description: "For versioned objects, the version of the deployment package object\
+      \ to use."
+Resources:
+  EC2Instance00i00a852d5e84be94a400xs1ow:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::EC2::Instance"
+    DeletionPolicy: "Delete"
+    Properties:
+      Tenancy: "default"
+      SecurityGroups:
+      - "launch-wizard-5"
+      - "ec2-rds-3"
+      - "ec2-rds-2"
+      - "ec2-rds-4"
+      PrivateIpAddress: "172.31.3.133"
+      UserData: "PHBvd2Vyc2hlbGw+CiMgLk5FVCBDb3JlIFJ1bnRpbWUg7ISk7LmYCiRkb3ROZXRDb3JlSW5zdGFsbGVyVXJpID0gImh0dHBzOi8vZG90bmV0d2VicmVsZWFzZXN0b3JhZ2UuYmxvYi5jb3JlLndpbmRvd3MubmV0L3J1bnRpbWUvMy4xLjMyL2RvdG5ldC1ydW50aW1lLTMuMS4zMi13aW4teDY0LmV4ZSIKJGRvdE5ldENvcmVJbnN0YWxsZXJEaXIgPSAiJGVudjpURU1QXGRvdG5ldC1pbnN0YWxsZXIiCiRkb3ROZXRDb3JlSW5zdGFsbGVyRmlsZSA9ICIkZG90TmV0Q29yZUluc3RhbGxlckRpclxkb3RuZXQtcnVudGltZS0zLjEuMzItd2luLXg2NC5leGUiCk5ldy1JdGVtIC1JdGVtVHlwZSBEaXJlY3RvcnkgLVBhdGggJGRvdE5ldENvcmVJbnN0YWxsZXJEaXIKSW52b2tlLVdlYlJlcXVlc3QgLVVyaSAkZG90TmV0Q29yZUluc3RhbGxlclVyaSAtT3V0RmlsZSAkZG90TmV0Q29yZUluc3RhbGxlckZpbGUKU3RhcnQtUHJvY2VzcyAtRmlsZVBhdGggJGRvdE5ldENvcmVJbnN0YWxsZXJGaWxlIC1BcmdzICIvaW5zdGFsbCAvcXVpZXQgL25vcmVzdGFydCIgLVdhaXQKCiMgQVdTIFRvb2xzIGZvciBQb3dlclNoZWxsIOyEpOy5mApJbnN0YWxsLU1vZHVsZSAtTmFtZSBBV1NQb3dlclNoZWxsLk5ldENvcmUgLUZvcmNlCgojIFBvd2VyU2hlbGwg7Iuk7ZaJIOygleyxhSDshKTsoJUKU2V0LUV4ZWN1dGlvblBvbGljeSBSZW1vdGVTaWduZWQKPC9wb3dlcnNoZWxsPg=="
+      BlockDeviceMappings:
+      - Ebs:
+          SnapshotId: "snap-00b91f7348b306d4e"
+          VolumeType: "gp3"
+          Iops: 3000
+          VolumeSize: 30
+          Encrypted: false
+          DeleteOnTermination: true
+        DeviceName: "/dev/sda1"
+      IamInstanceProfile:
+        Ref: "IAMInstanceProfile00MyTestRoleForEC200cHcYB"
+      SubnetId:
+        Ref: "EC2Subnet00subnet00c22ce20b776db4e00lChAd"
+      EbsOptimized: true
+      Volumes:
+      - VolumeId: "vol-0ed426caa965a9ab4"
+        Device: "/dev/sda1"
+      NetworkInterfaces:
+      - PrivateIpAddresses:
+        - PrivateIpAddress: "172.31.3.133"
+          Primary: true
+        SecondaryPrivateIpAddressCount: 0
+        DeviceIndex: "0"
+        GroupSet:
+        - Ref: "EC2SecurityGroup00sg0d86ccc66a13f5b4600Ea2tP"
+        - Ref: "EC2SecurityGroup00sg05445c3fa1244f34d00z1iSZ"
+        - Ref: "EC2SecurityGroup00sg0829dab2b088ac6db00KmFNy"
+        - Ref: "EC2SecurityGroup00sg0843cfa0b3da7f38e00MS2X4"
+        Ipv6Addresses: []
+        SubnetId:
+          Ref: "EC2Subnet00subnet00c22ce20b776db4e00lChAd"
+        AssociatePublicIpAddress: false
+        NetworkInterfaceId:
+          Ref: "EC2NetworkInterface00eni090f5fa5d9593968b00nn26l"
+        DeleteOnTermination: true
+      ImageId: "ami-07427619b8e8c799b"
+      InstanceType: "c6in.4xlarge"
+      Monitoring: false
+      Tags:
+      - Value: "Test-Middle #7"
+        Key: "Name"
+      InstanceInitiatedShutdownBehavior: "stop"
+      CpuOptions:
+        ThreadsPerCore: 2
+        CoreCount: 8
+      AvailabilityZone: "ap-northeast-2a"
+      PrivateDnsNameOptions:
+        EnableResourceNameDnsARecord: true
+        HostnameType: "ip-name"
+        EnableResourceNameDnsAAAARecord: false
+      SecurityGroupIds:
+      - "sg-0d86ccc66a13f5b46"
+      - "sg-05445c3fa1244f34d"
+      - "sg-0829dab2b088ac6db"
+      - "sg-0843cfa0b3da7f38e"
+      DisableApiTermination: false
+      KeyName: "EC2 Tutorial"
+      SourceDestCheck: true
+      PlacementGroupName: ""
+      VpcId: "vpc-0ba2471045a96a398"
+      State:
+        Code: "80"
+        Name: "stopped"
+      CreditSpecification:
+        CPUCredits: "standard"
+  RDSDBInstance00sqlserver00R7zsX:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::RDS::DBInstance"
+    DeletionPolicy: "Delete"
+    Properties:
+      StorageEncrypted: true
+      CharacterSetName: "SQL_Latin1_General_CP1_CI_AS"
+      MonitoringRoleArn: "arn:aws:iam::965037532757:role/rds-monitoring-role"
+      AssociatedRoles: []
+      CertificateDetails: {}
+      Port: "1433"
+      ProcessorFeatures: []
+      StorageThroughput: 500
+      PreferredBackupWindow: "14:58-15:28"
+      MonitoringInterval: 60
+      DBParameterGroupName: "sqlserver-se-memory-optimized-parameter"
+      Endpoint: {}
+      NetworkType: "IPV4"
+      DedicatedLogVolume: false
+      CopyTagsToSnapshot: true
+      MultiAZ: false
+      Engine: "sqlserver-se"
+      Tags:
+      - Value: "DB instance"
+        Key: "MockupTestType"
+      - Value: "sql-server"
+        Key: "DevOps-Guru-Sql"
+      - Value: "MockupServer"
+        Key: "TestType"
+      - Value: "sql-server"
+        Key: "MockupKey"
+      PerformanceInsightsKMSKeyId: "arn:aws:kms:ap-northeast-2:965037532757:key/133cc9e9-e36f-45d0-9270-2e33015fcd48"
+      LicenseModel: "license-included"
+      EngineVersion: "15.00.4375.4.v1"
+      StorageType: "gp3"
+      KmsKeyId: "arn:aws:kms:ap-northeast-2:965037532757:key/133cc9e9-e36f-45d0-9270-2e33015fcd48"
+      DBInstanceClass: "db.r6i.2xlarge"
+      PerformanceInsightsRetentionPeriod: 7
+      AvailabilityZone: "ap-northeast-2a"
+      OptionGroupName: "default:sqlserver-se-15-00"
+      PreferredMaintenanceWindow: "mon:14:15-mon:14:45"
+      EnablePerformanceInsights: true
+      AutoMinorVersionUpgrade: false
+      DBSubnetGroupName: "default-vpc-0ba2471045a96a398"
+      DeletionProtection: true
+      Iops: 10000
+      DBInstanceIdentifier: "sql-server"
+      AllocatedStorage: "500"
+      CACertificateIdentifier: "rds-ca-rsa2048-g1"
+      ManageMasterUserPassword: false
+      MasterUserSecret: {}
+      VPCSecurityGroups:
+      - Fn::GetAtt:
+        - "EC2SecurityGroup00sg0284d2fe9a2b1e1da00hxDZ2"
+        - "GroupId"
+      - Fn::GetAtt:
+        - "EC2SecurityGroup00sg0829dab2b088ac6db00KmFNy"
+        - "GroupId"
+      - "sg-05994a113cbcf84c0"
+      - "sg-0936e3776e47bd17f"
+      DBSecurityGroups: []
+      MasterUsername:
+        Ref: DBUserName
+      EnableIAMDatabaseAuthentication: false
+      MaxAllocatedStorage: 1000
+      BackupRetentionPeriod: 7
+      PubliclyAccessible: false
+      EnableCloudwatchLogsExports:
+      - "error"
+  EC2SecurityGroup00sg010f93cc4aec1454000QosFS:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::EC2::SecurityGroup"
+    DeletionPolicy: "Delete"
+    Properties:
+      GroupDescription: "Security group attached to aurora-24 to allow EC2 instances\
+        \ with specific security groups attached to connect to the database. Modification\
+        \ could lead to connection loss."
+      GroupName: "rds-ec2-5"
+      VpcId:
+        Ref: "EC2VPC00vpc0ba2471045a96a398003Ek3v"
+      SecurityGroupIngress:
+      - IpProtocol: "tcp"
+        Description: "Rule to allow connections from EC2 instances with sg-05df547596e1a9a23\
+          \ attached"
+        FromPort: 3306
+        SourceSecurityGroupId: "sg-05df547596e1a9a23"
+        ToPort: 3306
+        SourceSecurityGroupOwnerId: "965037532757"
+      SecurityGroupEgress:
+      - IpProtocol: "-1"
+        FromPort: -1
+        ToPort: -1
+        CidrIp: "0.0.0.0/0"
+  EC2Volume00vol0476d50fc3f58688700WnoXV:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::EC2::Volume"
+    DeletionPolicy: "Delete"
+    Properties:
+      MultiAttachEnabled: false
+      SnapshotId: "snap-00b91f7348b306d4e"
+      VolumeType: "gp3"
+      Encrypted: true
+      Size: 30
+      AutoEnableIO: true
+      AvailabilityZone: "ap-northeast-2a"
+      Throughput: 125
+      Iops: 3000
+      Tags: []
+  EC2Instance00i06690e537d52903df00etwpT:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::EC2::Instance"
+    DeletionPolicy: "Delete"
+    Properties:
+      Tenancy: "default"
+      SecurityGroups:
+      - "launch-wizard-5"
+      - "ec2-rds-2"
+      PrivateIpAddress: "172.31.13.215"
+      UserData: "PHBvd2Vyc2hlbGw+CiMgLk5FVCBDb3JlIFJ1bnRpbWUg7ISk7LmYCiRkb3ROZXRDb3JlSW5zdGFsbGVyVXJpID0gImh0dHBzOi8vZG90bmV0d2VicmVsZWFzZXN0b3JhZ2UuYmxvYi5jb3JlLndpbmRvd3MubmV0L3J1bnRpbWUvMy4xLjMyL2RvdG5ldC1ydW50aW1lLTMuMS4zMi13aW4teDY0LmV4ZSIKJGRvdE5ldENvcmVJbnN0YWxsZXJEaXIgPSAiJGVudjpURU1QXGRvdG5ldC1pbnN0YWxsZXIiCiRkb3ROZXRDb3JlSW5zdGFsbGVyRmlsZSA9ICIkZG90TmV0Q29yZUluc3RhbGxlckRpclxkb3RuZXQtcnVudGltZS0zLjEuMzItd2luLXg2NC5leGUiCk5ldy1JdGVtIC1JdGVtVHlwZSBEaXJlY3RvcnkgLVBhdGggJGRvdE5ldENvcmVJbnN0YWxsZXJEaXIKSW52b2tlLVdlYlJlcXVlc3QgLVVyaSAkZG90TmV0Q29yZUluc3RhbGxlclVyaSAtT3V0RmlsZSAkZG90TmV0Q29yZUluc3RhbGxlckZpbGUKU3RhcnQtUHJvY2VzcyAtRmlsZVBhdGggJGRvdE5ldENvcmVJbnN0YWxsZXJGaWxlIC1BcmdzICIvaW5zdGFsbCAvcXVpZXQgL25vcmVzdGFydCIgLVdhaXQKCiMgQVdTIFRvb2xzIGZvciBQb3dlclNoZWxsIOyEpOy5mApJbnN0YWxsLU1vZHVsZSAtTmFtZSBBV1NQb3dlclNoZWxsLk5ldENvcmUgLUZvcmNlCgojIFBvd2VyU2hlbGwg7Iuk7ZaJIOygleyxhSDshKTsoJUKU2V0LUV4ZWN1dGlvblBvbGljeSBSZW1vdGVTaWduZWQKCiMgSW5zdGFsbCBBV1MgVG9vbHMKJFByb2dyZXNzUHJlZmVyZW5jZSA9ICdTaWxlbnRseUNvbnRpbnVlJwpta2RpciBDOlxQcm9ncmFtRGF0YVxBbWF6b25cQW1hem9uQVdTQWdlbnRzIC1Gb3JjZQpJbnZva2UtV2ViUmVxdWVzdCAtVXJpIGh0dHBzOi8vczMuYW1hem9uYXdzLmNvbS9lYzItZG93bmxvYWRzLXdpbmRvd3MvQW1hem9uQVdTQWdlbnRzLnppcCAtT3V0RmlsZSBDOlxQcm9ncmFtRGF0YVxBbWF6b25cQW1hem9uQVdTQWdlbnRzXEFtYXpvbkFXU0FnZW50cy56aXAKRXhwYW5kLUFyY2hpdmUgLVBhdGggQzpcUHJvZ3JhbURhdGFcQW1hem9uXEFtYXpvbkFXU0FnZW50c1xBbWF6b25BV1NBZ2VudHMuemlwIC1EZXN0aW5hdGlvblBhdGggQzpcUHJvZ3JhbURhdGFcQW1hem9uXEFtYXpvbkFXU0FnZW50cyAtRm9yY2UKJGVudjpQYXRoICs9ICI7QzpcUHJvZ3JhbURhdGFcQW1hem9uXEFtYXpvbkFXU0FnZW50cyIKCiMgSW5zdGFsbCBTU00gQWdlbnQKU3RhcnQtUHJvY2VzcyAtRmlsZVBhdGggQzpcUHJvZ3JhbURhdGFcQW1hem9uXEFtYXpvbkFXU0FnZW50c1xBbWF6b25TU01BZ2VudC5leGUgLUFyZ3VtZW50TGlzdCAiL0luc3RhbGwgL1F1aWV0IiAtV2FpdAoKIyBDb25maWd1cmUgQ2xvdWRXYXRjaCBBZ2VudAokY3dBZ2VudENvbmZpZyA9IEAiCnsKICAibG9ncyI6IHsKICAgICJsb2dzX2NvbGxlY3RlZCI6IHsKICAgICAgImZpbGVzIjogewogICAgICAgICJjb2xsZWN0X2xpc3QiOiBbCiAgICAgICAgICB7CiAgICAgICAgICAgICJmaWxlX3BhdGgiOiAiQzpcXHRlc3RjbGllbnRcXGF1cm9yYVxcbG9nLnR4dCIsCiAgICAgICAgICAgICJsb2dfZ3JvdXBfbmFtZSI6ICJhdXJvcmEtdGVzdC1ncm91cCIsCiAgICAgICAgICAgICJsb2dfc3RyZWFtX25hbWUiOiAie2luc3RhbmNlX2lkfSIKICAgICAgICAgIH0sCiAgICAgICAgICB7CiAgICAgICAgICAgICJmaWxlX3BhdGgiOiAiQzpcXHRlc3RjbGllbnRcXG1zc3FsXFxsb2cudHh0IiwKICAgICAgICAgICAgImxvZ19ncm91cF9uYW1lIjogIm1zc3FsLXRlc3QtZ3JvdXAiLAogICAgICAgICAgICAibG9nX3N0cmVhbV9uYW1lIjogIntpbnN0YW5jZV9pZH0iCiAgICAgICAgICB9CiAgICAgICAgXQogICAgICB9CiAgICB9CiAgfQp9CiJACgokY3dBZ2VudENvbmZpZyB8IE91dC1GaWxlIC1GaWxlUGF0aCBDOlxQcm9ncmFtRGF0YVxBbWF6b25cQW1hem9uQVdTQWdlbnRzXGNvbmZpZy5qc29uIC1FbmNvZGluZyBBU0NJSSAtRm9yY2UKCiMgSW5zdGFsbCBDbG91ZFdhdGNoIEFnZW50ClN0YXJ0LVByb2Nlc3MgLUZpbGVQYXRoIEM6XFByb2dyYW1EYXRhXEFtYXpvblxBbWF6b25BV1NBZ2VudHNcQW1hem9uQ2xvdWRXYXRjaEFnZW50LmV4ZSAtQXJndW1lbnRMaXN0ICIvSW5zdGFsbCAvUXVpZXQiIC1XYWl0CgojIFN0YXJ0IENsb3VkV2F0Y2ggQWdlbnQKU3RhcnQtU2VydmljZSAtTmFtZSBBbWF6b25DbG91ZFdhdGNoQWdlbnQKPC9wb3dlcnNoZWxsPg=="
+      BlockDeviceMappings:
+      - Ebs:
+          SnapshotId: "snap-0b316d2290e49bcdb"
+          VolumeType: "gp3"
+          Iops: 3000
+          VolumeSize: 50
+          Encrypted: false
+          DeleteOnTermination: true
+        DeviceName: "/dev/sda1"
+      IamInstanceProfile:
+        Ref: "IAMInstanceProfile00MyTestRoleForEC200cHcYB"
+      SubnetId:
+        Ref: "EC2Subnet00subnet00c22ce20b776db4e00lChAd"
+      EbsOptimized: true
+      Volumes:
+      - VolumeId: "vol-06c0d89e39e4202a2"
+        Device: "/dev/sda1"
+      NetworkInterfaces:
+      - PrivateIpAddresses:
+        - PrivateIpAddress: "172.31.13.215"
+          Primary: true
+        SecondaryPrivateIpAddressCount: 0
+        DeviceIndex: "0"
+        GroupSet:
+        - Ref: "EC2SecurityGroup00sg0d86ccc66a13f5b4600Ea2tP"
+        - Ref: "EC2SecurityGroup00sg0829dab2b088ac6db00KmFNy"
+        Ipv6Addresses: []
+        SubnetId:
+          Ref: "EC2Subnet00subnet00c22ce20b776db4e00lChAd"
+        AssociatePublicIpAddress: false
+        NetworkInterfaceId:
+          Ref: "EC2NetworkInterface00eni02df8488fa51b9baa00eLZPw"
+        DeleteOnTermination: true
+      ImageId: "ami-0d159154c576c21c3"
+      InstanceType: "c6in.4xlarge"
+      Monitoring: false
+      Tags:
+      - Value: "Test-Middle #14"
+        Key: "Name"
+      InstanceInitiatedShutdownBehavior: "stop"
+      CpuOptions:
+        ThreadsPerCore: 2
+        CoreCount: 8
+      AvailabilityZone: "ap-northeast-2a"
+      PrivateDnsNameOptions:
+        EnableResourceNameDnsARecord: true
+        HostnameType: "ip-name"
+        EnableResourceNameDnsAAAARecord: false
+      SecurityGroupIds:
+      - "sg-0d86ccc66a13f5b46"
+      - "sg-0829dab2b088ac6db"
+      DisableApiTermination: false
+      KeyName: "EC2 Tutorial"
+      SourceDestCheck: true
+      PlacementGroupName: ""
+      VpcId: "vpc-0ba2471045a96a398"
+      State:
+        Code: "80"
+        Name: "stopped"
+      CreditSpecification:
+        CPUCredits: "standard"
+  EC2NetworkInterface00eni04383c9f001a5092500UjKaI:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::EC2::NetworkInterface"
+    DeletionPolicy: "Delete"
+    Properties:
+      Description: ""
+      PrivateIpAddress: "172.31.5.78"
+      PrivateIpAddresses:
+      - PrivateIpAddress: "172.31.5.78"
+        Primary: true
+      SecondaryPrivateIpAddressCount: 0
+      Ipv6PrefixCount: 0
+      Ipv4Prefixes: []
+      Ipv4PrefixCount: 0
+      GroupSet:
+      - "sg-0d86ccc66a13f5b46"
+      - "sg-0829dab2b088ac6db"
+      Ipv6Prefixes: []
+      SubnetId:
+        Ref: "EC2Subnet00subnet00c22ce20b776db4e00lChAd"
+      SourceDestCheck: true
+      InterfaceType: "interface"
+      Tags: []
+  RDSDBInstance00sqlservermultiaz00WJW7M:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::RDS::DBInstance"
+    DeletionPolicy: "Delete"
+    Properties:
+      StorageEncrypted: true
+      CharacterSetName: "SQL_Latin1_General_CP1_CI_AS"
+      MonitoringRoleArn: "arn:aws:iam::965037532757:role/rds-monitoring-role"
+      AssociatedRoles: []
+      CertificateDetails: {}
+      Port: "1433"
+      ProcessorFeatures: []
+      StorageThroughput: 500
+      PreferredBackupWindow: "17:34-18:04"
+      MonitoringInterval: 60
+      DBParameterGroupName: "sqlserver-se-memory-optimized-parameter"
+      Endpoint: {}
+      NetworkType: "IPV4"
+      DedicatedLogVolume: false
+      CopyTagsToSnapshot: true
+      MultiAZ: true
+      Engine: "sqlserver-se"
+      Tags:
+      - Value: "DB instance"
+        Key: "MockupTestType"
+      PerformanceInsightsKMSKeyId: "arn:aws:kms:ap-northeast-2:965037532757:key/133cc9e9-e36f-45d0-9270-2e33015fcd48"
+      LicenseModel: "license-included"
+      EngineVersion: "15.00.4390.2.v1"
+      StorageType: "gp3"
+      KmsKeyId: "arn:aws:kms:ap-northeast-2:965037532757:key/133cc9e9-e36f-45d0-9270-2e33015fcd48"
+      DBInstanceClass: "db.r6i.large"
+      PerformanceInsightsRetentionPeriod: 7
+      AvailabilityZone: "ap-northeast-2a"
+      OptionGroupName: "default:sqlserver-se-15-00"
+      PreferredMaintenanceWindow: "thu:15:19-thu:15:49"
+      EnablePerformanceInsights: true
+      AutoMinorVersionUpgrade: false
+      DBSubnetGroupName: "default-vpc-0ba2471045a96a398"
+      DeletionProtection: true
+      Iops: 10000
+      DBInstanceIdentifier: "sql-server-multi-az"
+      AllocatedStorage: "500"
+      CACertificateIdentifier: "rds-ca-rsa2048-g1"
+      ManageMasterUserPassword: false
+      MasterUserSecret: {}
+      VPCSecurityGroups:
+      - "sg-05994a113cbcf84c0"
+      - "sg-0936e3776e47bd17f"
+      - Fn::GetAtt:
+        - "EC2SecurityGroup00sg0284d2fe9a2b1e1da00hxDZ2"
+        - "GroupId"
+      - Fn::GetAtt:
+        - "EC2SecurityGroup00sg0829dab2b088ac6db00KmFNy"
+        - "GroupId"
+      DBSecurityGroups: []
+      MasterUsername:
+        Ref: DBUserName
+      EnableIAMDatabaseAuthentication: false
+      MaxAllocatedStorage: 630
+      BackupRetentionPeriod: 7
+      PubliclyAccessible: false
+      EnableCloudwatchLogsExports:
+      - "error"
+  EC2NetworkInterface00eni051edad864f07a9ee00G7J5R:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::EC2::NetworkInterface"
+    DeletionPolicy: "Delete"
+    Properties:
+      Description: ""
+      PrivateIpAddress: "172.31.10.99"
+      PrivateIpAddresses:
+      - PrivateIpAddress: "172.31.10.99"
+        Primary: true
+      SecondaryPrivateIpAddressCount: 0
+      Ipv6PrefixCount: 0
+      Ipv4Prefixes: []
+      Ipv4PrefixCount: 0
+      GroupSet:
+      - "sg-0d86ccc66a13f5b46"
+      - "sg-05f859e0a8fc698dc"
+      - "sg-05445c3fa1244f34d"
+      - "sg-0829dab2b088ac6db"
+      - "sg-0843cfa0b3da7f38e"
+      Ipv6Prefixes: []
+      SubnetId:
+        Ref: "EC2Subnet00subnet00c22ce20b776db4e00lChAd"
+      SourceDestCheck: true
+      InterfaceType: "interface"
+      Tags: []
+  EC2NetworkInterface00eni00cca41c754a6ac8e00JlOzH:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::EC2::NetworkInterface"
+    DeletionPolicy: "Delete"
+    Properties:
+      Description: ""
+      PrivateIpAddress: "172.31.11.130"
+      PrivateIpAddresses:
+      - PrivateIpAddress: "172.31.11.130"
+        Primary: true
+      SecondaryPrivateIpAddressCount: 0
+      Ipv6PrefixCount: 0
+      Ipv4Prefixes: []
+      Ipv4PrefixCount: 0
+      GroupSet:
+      - "sg-0d86ccc66a13f5b46"
+      - "sg-05445c3fa1244f34d"
+      - "sg-0829dab2b088ac6db"
+      - "sg-0843cfa0b3da7f38e"
+      Ipv6Prefixes: []
+      SubnetId:
+        Ref: "EC2Subnet00subnet00c22ce20b776db4e00lChAd"
+      SourceDestCheck: true
+      InterfaceType: "interface"
+      Tags: []
+  IAMManagedPolicy00policyserviceroleLambdaInvokeScopedAccessPolicy51a469ec878d48e0a88fc5883b9bab50004KFR0:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::IAM::ManagedPolicy"
+    DeletionPolicy: "Delete"
+    Properties:
+      ManagedPolicyName: "LambdaInvokeScopedAccessPolicy-51a469ec-878d-48e0-a88f-c5883b9bab50"
+      Path: "/service-role/"
+      Description: "Allow AWS Step Functions to invoke Lambda functions on your behalf"
+      Groups: []
+      PolicyDocument:
+        Version: "2012-10-17"
+        Statement:
+        - Resource:
+          - "arn:aws:lambda:ap-northeast-2:965037532757:function:mockupserver-test-prerequisites:*"
+          Action:
+          - "lambda:InvokeFunction"
+          Effect: "Allow"
+        - Resource:
+          - "arn:aws:lambda:ap-northeast-2:965037532757:function:mockupserver-test-prerequisites"
+          Action:
+          - "lambda:InvokeFunction"
+          Effect: "Allow"
+        - Resource:
+          - "arn:aws:lambda:ap-northeast-2:965037532757:function:mockupserver-test-report:*"
+          Action:
+          - "lambda:InvokeFunction"
+          Effect: "Allow"
+        - Resource:
+          - "arn:aws:lambda:ap-northeast-2:965037532757:function:mockupserver-test-report"
+          Action:
+          - "lambda:InvokeFunction"
+          Effect: "Allow"
+      Roles:
+      - Ref: "IAMRole00StepFunctionsMyStateMachine52ftupc97rolexvfgmrilr00ogBM8"
+      Users: []
+  EC2SubnetNetworkAclAssociation00aclassoc0e70ff4aaeefbc66000nsAKC:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::EC2::SubnetNetworkAclAssociation"
+    DeletionPolicy: "Delete"
+    Properties:
+      NetworkAclId:
+        Ref: "EC2NetworkAcl00acl09b97f26fc1bbaeac00oDCVL"
+      SubnetId:
+        Ref: "EC2Subnet00subnet028db0476341bf4c300VfQWm"
+  EC2SecurityGroup00sg0dc334e34de5cf9af00t86mz:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::EC2::SecurityGroup"
+    DeletionPolicy: "Delete"
+    Properties:
+      GroupDescription: "Security group attached to mssql-test to allow EC2 instances\
+        \ with specific security groups attached to connect to the database. Modification\
+        \ could lead to connection loss."
+      GroupName: "rds-ec2-3"
+      VpcId:
+        Ref: "EC2VPC00vpc0ba2471045a96a398003Ek3v"
+      SecurityGroupIngress:
+      - IpProtocol: "tcp"
+        Description: "Rule to allow connections from EC2 instances with sg-05445c3fa1244f34d\
+          \ attached"
+        FromPort: 1433
+        SourceSecurityGroupId: "sg-05445c3fa1244f34d"
+        ToPort: 1433
+        SourceSecurityGroupOwnerId: "965037532757"
+      SecurityGroupEgress:
+      - IpProtocol: "-1"
+        FromPort: -1
+        ToPort: -1
+        CidrIp: "0.0.0.0/0"
+  RDSDBInstance00aurorainstance1rds00xGeq6:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::RDS::DBInstance"
+    DeletionPolicy: "Delete"
+    Properties:
+      StorageEncrypted: true
+      AssociatedRoles: []
+      CertificateDetails: {}
+      Port: "3306"
+      DBClusterIdentifier:
+        Ref: "RDSDBCluster00aurora00FDTfh"
+      ProcessorFeatures: []
+      StorageThroughput: 0
+      PreferredBackupWindow: "18:27-18:57"
+      MonitoringInterval: 0
+      DBParameterGroupName: "aurora-mysql-memory-optimized"
+      Endpoint: {}
+      NetworkType: "IPV4"
+      DedicatedLogVolume: false
+      CopyTagsToSnapshot: false
+      MultiAZ: false
+      Engine: "aurora-mysql"
+      Tags:
+      - Value: "DB instance"
+        Key: "MockupTestType"
+      PerformanceInsightsKMSKeyId: "arn:aws:kms:ap-northeast-2:965037532757:key/133cc9e9-e36f-45d0-9270-2e33015fcd48"
+      EngineLifecycleSupport: "open-source-rds-extended-support"
+      LicenseModel: "general-public-license"
+      EngineVersion: "8.0.mysql_aurora.3.04.1"
+      StorageType: "aurora-iopt1"
+      KmsKeyId: "arn:aws:kms:ap-northeast-2:965037532757:key/133cc9e9-e36f-45d0-9270-2e33015fcd48"
+      DBInstanceClass: "db.r6i.8xlarge"
+      PerformanceInsightsRetentionPeriod: 7
+      AvailabilityZone: "ap-northeast-2d"
+      OptionGroupName: "default:aurora-mysql-8-0"
+      PreferredMaintenanceWindow: "fri:16:29-fri:16:59"
+      EnablePerformanceInsights: true
+      AutoMinorVersionUpgrade: false
+      DBSubnetGroupName:
+        Ref: "RDSDBSubnetGroup00rdsec2dbsubnetgroup100EOLyj"
+      DeletionProtection: false
+      DBInstanceIdentifier: "aurora-instance-1-rds"
+      AllocatedStorage: "1"
+      CACertificateIdentifier: "rds-ca-rsa2048-g1"
+      ManageMasterUserPassword: false
+      MasterUserSecret: {}
+      VPCSecurityGroups:
+      - "sg-036acef45f00197de"
+      - Fn::GetAtt:
+        - "EC2SecurityGroup00sg0284d2fe9a2b1e1da00hxDZ2"
+        - "GroupId"
+      DBSecurityGroups: []
+      MasterUsername:
+        Ref: DBUserName
+      DBName: "testdb"
+      EnableIAMDatabaseAuthentication: false
+      BackupRetentionPeriod: 1
+      PromotionTier: 1
+      PubliclyAccessible: false
+      EnableCloudwatchLogsExports:
+      - "error"
+      - "slowquery"
+  EC2Instance00i0d90a43554b71e17a00DzVkH:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::EC2::Instance"
+    DeletionPolicy: "Delete"
+    Properties:
+      Tenancy: "default"
+      SecurityGroups:
+      - "launch-wizard-5"
+      - "ec2-rds-3"
+      - "ec2-rds-2"
+      - "ec2-rds-4"
+      PrivateIpAddress: "172.31.0.138"
+      UserData: "PHBvd2Vyc2hlbGw+CiMgLk5FVCBDb3JlIFJ1bnRpbWUg7ISk7LmYCiRkb3ROZXRDb3JlSW5zdGFsbGVyVXJpID0gImh0dHBzOi8vZG90bmV0d2VicmVsZWFzZXN0b3JhZ2UuYmxvYi5jb3JlLndpbmRvd3MubmV0L3J1bnRpbWUvMy4xLjMyL2RvdG5ldC1ydW50aW1lLTMuMS4zMi13aW4teDY0LmV4ZSIKJGRvdE5ldENvcmVJbnN0YWxsZXJEaXIgPSAiJGVudjpURU1QXGRvdG5ldC1pbnN0YWxsZXIiCiRkb3ROZXRDb3JlSW5zdGFsbGVyRmlsZSA9ICIkZG90TmV0Q29yZUluc3RhbGxlckRpclxkb3RuZXQtcnVudGltZS0zLjEuMzItd2luLXg2NC5leGUiCk5ldy1JdGVtIC1JdGVtVHlwZSBEaXJlY3RvcnkgLVBhdGggJGRvdE5ldENvcmVJbnN0YWxsZXJEaXIKSW52b2tlLVdlYlJlcXVlc3QgLVVyaSAkZG90TmV0Q29yZUluc3RhbGxlclVyaSAtT3V0RmlsZSAkZG90TmV0Q29yZUluc3RhbGxlckZpbGUKU3RhcnQtUHJvY2VzcyAtRmlsZVBhdGggJGRvdE5ldENvcmVJbnN0YWxsZXJGaWxlIC1BcmdzICIvaW5zdGFsbCAvcXVpZXQgL25vcmVzdGFydCIgLVdhaXQKCiMgQVdTIFRvb2xzIGZvciBQb3dlclNoZWxsIOyEpOy5mApJbnN0YWxsLU1vZHVsZSAtTmFtZSBBV1NQb3dlclNoZWxsLk5ldENvcmUgLUZvcmNlCgojIFBvd2VyU2hlbGwg7Iuk7ZaJIOygleyxhSDshKTsoJUKU2V0LUV4ZWN1dGlvblBvbGljeSBSZW1vdGVTaWduZWQKPC9wb3dlcnNoZWxsPg=="
+      BlockDeviceMappings:
+      - Ebs:
+          SnapshotId: "snap-00b91f7348b306d4e"
+          VolumeType: "gp3"
+          Iops: 3000
+          VolumeSize: 30
+          Encrypted: false
+          DeleteOnTermination: true
+        DeviceName: "/dev/sda1"
+      IamInstanceProfile:
+        Ref: "IAMInstanceProfile00MyTestRoleForEC200cHcYB"
+      SubnetId:
+        Ref: "EC2Subnet00subnet00c22ce20b776db4e00lChAd"
+      EbsOptimized: true
+      Volumes:
+      - VolumeId: "vol-0153693b55a8b6ca9"
+        Device: "/dev/sda1"
+      NetworkInterfaces:
+      - PrivateIpAddresses:
+        - PrivateIpAddress: "172.31.0.138"
+          Primary: true
+        SecondaryPrivateIpAddressCount: 0
+        DeviceIndex: "0"
+        GroupSet:
+        - Ref: "EC2SecurityGroup00sg0d86ccc66a13f5b4600Ea2tP"
+        - Ref: "EC2SecurityGroup00sg05445c3fa1244f34d00z1iSZ"
+        - Ref: "EC2SecurityGroup00sg0829dab2b088ac6db00KmFNy"
+        - Ref: "EC2SecurityGroup00sg0843cfa0b3da7f38e00MS2X4"
+        Ipv6Addresses: []
+        SubnetId:
+          Ref: "EC2Subnet00subnet00c22ce20b776db4e00lChAd"
+        AssociatePublicIpAddress: false
+        NetworkInterfaceId:
+          Ref: "EC2NetworkInterface00eni063020ab1e26bba0800DY55m"
+        DeleteOnTermination: true
+      ImageId: "ami-07427619b8e8c799b"
+      InstanceType: "c6in.4xlarge"
+      Monitoring: false
+      Tags:
+      - Value: "EC2"
+        Key: "MockupTestType"
+      - Value: "Test-Middle #3"
+        Key: "Name"
+      InstanceInitiatedShutdownBehavior: "stop"
+      CpuOptions:
+        ThreadsPerCore: 2
+        CoreCount: 8
+      AvailabilityZone: "ap-northeast-2a"
+      PrivateDnsNameOptions:
+        EnableResourceNameDnsARecord: true
+        HostnameType: "ip-name"
+        EnableResourceNameDnsAAAARecord: false
+      SecurityGroupIds:
+      - "sg-0d86ccc66a13f5b46"
+      - "sg-05445c3fa1244f34d"
+      - "sg-0829dab2b088ac6db"
+      - "sg-0843cfa0b3da7f38e"
+      DisableApiTermination: false
+      KeyName: "EC2 Tutorial"
+      SourceDestCheck: true
+      PlacementGroupName: ""
+      VpcId: "vpc-0ba2471045a96a398"
+      State:
+        Code: "80"
+        Name: "stopped"
+      CreditSpecification:
+        CPUCredits: "standard"
+  EC2SecurityGroup00sg05445c3fa1244f34d00z1iSZ:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::EC2::SecurityGroup"
+    DeletionPolicy: "Delete"
+    Properties:
+      GroupDescription: "Security group attached to instances to securely connect\
+        \ to mssql-test. Modification could lead to connection loss."
+      GroupName: "ec2-rds-3"
+      VpcId:
+        Ref: "EC2VPC00vpc0ba2471045a96a398003Ek3v"
+      SecurityGroupEgress:
+      - IpProtocol: "tcp"
+        DestinationSecurityGroupId:
+          Fn::GetAtt:
+          - "EC2SecurityGroup00sg0dc334e34de5cf9af00t86mz"
+          - "GroupId"
+        Description: "Rule to allow connections to mssql-test from any instances this\
+          \ security group is attached to"
+        FromPort: 1433
+        ToPort: 1433
+  EC2VolumeAttachment00vol0b3d1f493815e0e0500rmOf7:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::EC2::VolumeAttachment"
+    DeletionPolicy: "Delete"
+    Properties:
+      InstanceId: "i-0097d640ec9ac5a60"
+      VolumeId: "vol-0b3d1f493815e0e05"
+      Device: "/dev/sda1"
+  EC2Instance00i0bd4a5dbb5b6a124600Jhbje:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::EC2::Instance"
+    DeletionPolicy: "Delete"
+    Properties:
+      Tenancy: "default"
+      SecurityGroups:
+      - "launch-wizard-5"
+      - "ec2-rds-3"
+      - "ec2-rds-2"
+      - "ec2-rds-4"
+      PrivateIpAddress: "172.31.9.179"
+      UserData: "PHBvd2Vyc2hlbGw+CiMgLk5FVCBDb3JlIFJ1bnRpbWUg7ISk7LmYCiRkb3ROZXRDb3JlSW5zdGFsbGVyVXJpID0gImh0dHBzOi8vZG90bmV0d2VicmVsZWFzZXN0b3JhZ2UuYmxvYi5jb3JlLndpbmRvd3MubmV0L3J1bnRpbWUvMy4xLjMyL2RvdG5ldC1ydW50aW1lLTMuMS4zMi13aW4teDY0LmV4ZSIKJGRvdE5ldENvcmVJbnN0YWxsZXJEaXIgPSAiJGVudjpURU1QXGRvdG5ldC1pbnN0YWxsZXIiCiRkb3ROZXRDb3JlSW5zdGFsbGVyRmlsZSA9ICIkZG90TmV0Q29yZUluc3RhbGxlckRpclxkb3RuZXQtcnVudGltZS0zLjEuMzItd2luLXg2NC5leGUiCk5ldy1JdGVtIC1JdGVtVHlwZSBEaXJlY3RvcnkgLVBhdGggJGRvdE5ldENvcmVJbnN0YWxsZXJEaXIKSW52b2tlLVdlYlJlcXVlc3QgLVVyaSAkZG90TmV0Q29yZUluc3RhbGxlclVyaSAtT3V0RmlsZSAkZG90TmV0Q29yZUluc3RhbGxlckZpbGUKU3RhcnQtUHJvY2VzcyAtRmlsZVBhdGggJGRvdE5ldENvcmVJbnN0YWxsZXJGaWxlIC1BcmdzICIvaW5zdGFsbCAvcXVpZXQgL25vcmVzdGFydCIgLVdhaXQKCiMgQVdTIFRvb2xzIGZvciBQb3dlclNoZWxsIOyEpOy5mApJbnN0YWxsLU1vZHVsZSAtTmFtZSBBV1NQb3dlclNoZWxsLk5ldENvcmUgLUZvcmNlCgojIFBvd2VyU2hlbGwg7Iuk7ZaJIOygleyxhSDshKTsoJUKU2V0LUV4ZWN1dGlvblBvbGljeSBSZW1vdGVTaWduZWQKPC9wb3dlcnNoZWxsPg=="
+      BlockDeviceMappings:
+      - Ebs:
+          SnapshotId: "snap-00b91f7348b306d4e"
+          VolumeType: "gp3"
+          Iops: 3000
+          VolumeSize: 30
+          Encrypted: false
+          DeleteOnTermination: true
+        DeviceName: "/dev/sda1"
+      IamInstanceProfile:
+        Ref: "IAMInstanceProfile00MyTestRoleForEC200cHcYB"
+      SubnetId:
+        Ref: "EC2Subnet00subnet00c22ce20b776db4e00lChAd"
+      EbsOptimized: true
+      Volumes:
+      - VolumeId: "vol-0976380feec44b494"
+        Device: "/dev/sda1"
+      NetworkInterfaces:
+      - PrivateIpAddresses:
+        - PrivateIpAddress: "172.31.9.179"
+          Primary: true
+        SecondaryPrivateIpAddressCount: 0
+        DeviceIndex: "0"
+        GroupSet:
+        - Ref: "EC2SecurityGroup00sg0d86ccc66a13f5b4600Ea2tP"
+        - Ref: "EC2SecurityGroup00sg05445c3fa1244f34d00z1iSZ"
+        - Ref: "EC2SecurityGroup00sg0829dab2b088ac6db00KmFNy"
+        - Ref: "EC2SecurityGroup00sg0843cfa0b3da7f38e00MS2X4"
+        Ipv6Addresses: []
+        SubnetId:
+          Ref: "EC2Subnet00subnet00c22ce20b776db4e00lChAd"
+        AssociatePublicIpAddress: false
+        NetworkInterfaceId:
+          Ref: "EC2NetworkInterface00eni082055fa8c27ebded00NDR4V"
+        DeleteOnTermination: true
+      ImageId: "ami-07427619b8e8c799b"
+      InstanceType: "c6in.4xlarge"
+      Monitoring: false
+      Tags:
+      - Value: "Test-Middle #9"
+        Key: "Name"
+      InstanceInitiatedShutdownBehavior: "stop"
+      CpuOptions:
+        ThreadsPerCore: 2
+        CoreCount: 8
+      AvailabilityZone: "ap-northeast-2a"
+      PrivateDnsNameOptions:
+        EnableResourceNameDnsARecord: true
+        HostnameType: "ip-name"
+        EnableResourceNameDnsAAAARecord: false
+      SecurityGroupIds:
+      - "sg-0d86ccc66a13f5b46"
+      - "sg-05445c3fa1244f34d"
+      - "sg-0829dab2b088ac6db"
+      - "sg-0843cfa0b3da7f38e"
+      DisableApiTermination: false
+      KeyName: "EC2 Tutorial"
+      SourceDestCheck: true
+      PlacementGroupName: ""
+      VpcId: "vpc-0ba2471045a96a398"
+      State:
+        Code: "80"
+        Name: "stopped"
+      CreditSpecification:
+        CPUCredits: "standard"
+  EC2VolumeAttachment00vol0ed426caa965a9ab400Qwx6H:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::EC2::VolumeAttachment"
+    DeletionPolicy: "Delete"
+    Properties:
+      InstanceId: "i-00a852d5e84be94a4"
+      VolumeId: "vol-0ed426caa965a9ab4"
+      Device: "/dev/sda1"
+  RDSDBInstance00aurorainstance1009OzfR:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::RDS::DBInstance"
+    DeletionPolicy: "Delete"
+    Properties:
+      StorageEncrypted: true
+      MonitoringRoleArn: "arn:aws:iam::965037532757:role/rds-monitoring-role"
+      AssociatedRoles: []
+      CertificateDetails: {}
+      Port: "3306"
+      DBClusterIdentifier:
+        Ref: "RDSDBCluster00aurora00FDTfh"
+      ProcessorFeatures: []
+      StorageThroughput: 0
+      PreferredBackupWindow: "18:27-18:57"
+      MonitoringInterval: 10
+      DBParameterGroupName: "aurora-mysql-memory-optimized"
+      Endpoint: {}
+      NetworkType: "IPV4"
+      DedicatedLogVolume: false
+      CopyTagsToSnapshot: false
+      MultiAZ: false
+      Engine: "aurora-mysql"
+      Tags:
+      - Value: "DB instance"
+        Key: "MockupTestType"
+      - Value: "aurora"
+        Key: "devops-guru-default"
+      PerformanceInsightsKMSKeyId: "arn:aws:kms:ap-northeast-2:965037532757:key/133cc9e9-e36f-45d0-9270-2e33015fcd48"
+      EngineLifecycleSupport: "open-source-rds-extended-support"
+      LicenseModel: "general-public-license"
+      EngineVersion: "8.0.mysql_aurora.3.04.1"
+      StorageType: "aurora-iopt1"
+      KmsKeyId: "arn:aws:kms:ap-northeast-2:965037532757:key/133cc9e9-e36f-45d0-9270-2e33015fcd48"
+      DBInstanceClass: "db.r6i.2xlarge"
+      PerformanceInsightsRetentionPeriod: 7
+      AvailabilityZone: "ap-northeast-2a"
+      OptionGroupName: "default:aurora-mysql-8-0"
+      PreferredMaintenanceWindow: "thu:17:45-thu:18:15"
+      EnablePerformanceInsights: true
+      AutoMinorVersionUpgrade: false
+      DBSubnetGroupName:
+        Ref: "RDSDBSubnetGroup00rdsec2dbsubnetgroup100EOLyj"
+      DeletionProtection: false
+      DBInstanceIdentifier: "aurora-instance-1"
+      AllocatedStorage: "1"
+      CACertificateIdentifier: "rds-ca-rsa2048-g1"
+      ManageMasterUserPassword: false
+      MasterUserSecret: {}
+      VPCSecurityGroups:
+      - Fn::GetAtt:
+        - "EC2SecurityGroup00sg0284d2fe9a2b1e1da00hxDZ2"
+        - "GroupId"
+      - "sg-036acef45f00197de"
+      DBSecurityGroups: []
+      MasterUsername:
+        Ref: DBUserName
+      DBName: "testdb"
+      EnableIAMDatabaseAuthentication: false
+      PromotionTier: 1
+      PubliclyAccessible: false
+      BackupRetentionPeriod: 1
+      EnableCloudwatchLogsExports:
+      - "error"
+      - "slowquery"
+  EC2SubnetNetworkAclAssociation00aclassoc05315882810d34a2e00Nh3Ue:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::EC2::SubnetNetworkAclAssociation"
+    DeletionPolicy: "Delete"
+    Properties:
+      NetworkAclId:
+        Ref: "EC2NetworkAcl00acl09b97f26fc1bbaeac00oDCVL"
+      SubnetId:
+        Ref: "EC2Subnet00subnet0c69787755bcf4f1e00iN7jN"
+  EC2Subnet00subnet086663c14c0f832fb00eks08:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::EC2::Subnet"
+    DeletionPolicy: "Delete"
+    Properties:
+      VpcId:
+        Ref: "EC2VPC00vpc0ba2471045a96a398003Ek3v"
+      MapPublicIpOnLaunch: true
+      EnableDns64: false
+      AvailabilityZoneId: "apne2-az4"
+      PrivateDnsNameOptionsOnLaunch:
+        EnableResourceNameDnsARecord: false
+        HostnameType: "ip-name"
+        EnableResourceNameDnsAAAARecord: false
+      CidrBlock: "172.31.48.0/20"
+      Ipv6Native: false
+      Tags:
+      - Value: "Subnet"
+        Key: "MockupTestType"
+  EC2VPC00vpc0ba2471045a96a398003Ek3v:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::EC2::VPC"
+    DeletionPolicy: "Delete"
+    Properties:
+      CidrBlock: "172.31.0.0/16"
+      EnableDnsSupport: true
+      InstanceTenancy: "default"
+      EnableDnsHostnames: true
+      Tags:
+      - Value: "VPC"
+        Key: "MockupTestType"
+  EC2Instance00i0f3880cdd1c1a2e2a00VijGI:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::EC2::Instance"
+    DeletionPolicy: "Delete"
+    Properties:
+      Tenancy: "default"
+      SecurityGroups:
+      - "launch-wizard-5"
+      - "ec2-rds-3"
+      - "ec2-rds-2"
+      - "ec2-rds-4"
+      PrivateIpAddress: "172.31.3.89"
+      UserData: "PHBvd2Vyc2hlbGw+CiMgLk5FVCBDb3JlIFJ1bnRpbWUg7ISk7LmYCiRkb3ROZXRDb3JlSW5zdGFsbGVyVXJpID0gImh0dHBzOi8vZG90bmV0d2VicmVsZWFzZXN0b3JhZ2UuYmxvYi5jb3JlLndpbmRvd3MubmV0L3J1bnRpbWUvMy4xLjMyL2RvdG5ldC1ydW50aW1lLTMuMS4zMi13aW4teDY0LmV4ZSIKJGRvdE5ldENvcmVJbnN0YWxsZXJEaXIgPSAiJGVudjpURU1QXGRvdG5ldC1pbnN0YWxsZXIiCiRkb3ROZXRDb3JlSW5zdGFsbGVyRmlsZSA9ICIkZG90TmV0Q29yZUluc3RhbGxlckRpclxkb3RuZXQtcnVudGltZS0zLjEuMzItd2luLXg2NC5leGUiCk5ldy1JdGVtIC1JdGVtVHlwZSBEaXJlY3RvcnkgLVBhdGggJGRvdE5ldENvcmVJbnN0YWxsZXJEaXIKSW52b2tlLVdlYlJlcXVlc3QgLVVyaSAkZG90TmV0Q29yZUluc3RhbGxlclVyaSAtT3V0RmlsZSAkZG90TmV0Q29yZUluc3RhbGxlckZpbGUKU3RhcnQtUHJvY2VzcyAtRmlsZVBhdGggJGRvdE5ldENvcmVJbnN0YWxsZXJGaWxlIC1BcmdzICIvaW5zdGFsbCAvcXVpZXQgL25vcmVzdGFydCIgLVdhaXQKCiMgQVdTIFRvb2xzIGZvciBQb3dlclNoZWxsIOyEpOy5mApJbnN0YWxsLU1vZHVsZSAtTmFtZSBBV1NQb3dlclNoZWxsLk5ldENvcmUgLUZvcmNlCgojIFBvd2VyU2hlbGwg7Iuk7ZaJIOygleyxhSDshKTsoJUKU2V0LUV4ZWN1dGlvblBvbGljeSBSZW1vdGVTaWduZWQKPC9wb3dlcnNoZWxsPg=="
+      BlockDeviceMappings:
+      - Ebs:
+          SnapshotId: "snap-00b91f7348b306d4e"
+          VolumeType: "gp3"
+          Iops: 3000
+          VolumeSize: 30
+          Encrypted: false
+          DeleteOnTermination: true
+        DeviceName: "/dev/sda1"
+      IamInstanceProfile:
+        Ref: "IAMInstanceProfile00MyTestRoleForEC200cHcYB"
+      SubnetId:
+        Ref: "EC2Subnet00subnet00c22ce20b776db4e00lChAd"
+      EbsOptimized: true
+      Volumes:
+      - VolumeId: "vol-0476d50fc3f586887"
+        Device: "/dev/sda1"
+      NetworkInterfaces:
+      - PrivateIpAddresses:
+        - PrivateIpAddress: "172.31.3.89"
+          Primary: true
+        SecondaryPrivateIpAddressCount: 0
+        DeviceIndex: "0"
+        GroupSet:
+        - Ref: "EC2SecurityGroup00sg0d86ccc66a13f5b4600Ea2tP"
+        - Ref: "EC2SecurityGroup00sg05445c3fa1244f34d00z1iSZ"
+        - Ref: "EC2SecurityGroup00sg0829dab2b088ac6db00KmFNy"
+        - Ref: "EC2SecurityGroup00sg0843cfa0b3da7f38e00MS2X4"
+        Ipv6Addresses: []
+        SubnetId:
+          Ref: "EC2Subnet00subnet00c22ce20b776db4e00lChAd"
+        AssociatePublicIpAddress: false
+        NetworkInterfaceId:
+          Ref: "EC2NetworkInterface00eni036171f0c7b7d77ae00enVAd"
+        DeleteOnTermination: true
+      ImageId: "ami-07427619b8e8c799b"
+      InstanceType: "c6in.4xlarge"
+      Monitoring: false
+      Tags:
+      - Value: "Test-Middle #8"
+        Key: "Name"
+      InstanceInitiatedShutdownBehavior: "stop"
+      CpuOptions:
+        ThreadsPerCore: 2
+        CoreCount: 8
+      AvailabilityZone: "ap-northeast-2a"
+      PrivateDnsNameOptions:
+        EnableResourceNameDnsARecord: true
+        HostnameType: "ip-name"
+        EnableResourceNameDnsAAAARecord: false
+      SecurityGroupIds:
+      - "sg-0d86ccc66a13f5b46"
+      - "sg-05445c3fa1244f34d"
+      - "sg-0829dab2b088ac6db"
+      - "sg-0843cfa0b3da7f38e"
+      DisableApiTermination: false
+      KeyName: "EC2 Tutorial"
+      SourceDestCheck: true
+      PlacementGroupName: ""
+      VpcId: "vpc-0ba2471045a96a398"
+      State:
+        Code: "80"
+        Name: "stopped"
+      CreditSpecification:
+        CPUCredits: "standard"
+  EC2NetworkInterface00eni02df8488fa51b9baa00eLZPw:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::EC2::NetworkInterface"
+    DeletionPolicy: "Delete"
+    Properties:
+      Description: ""
+      PrivateIpAddress: "172.31.13.215"
+      PrivateIpAddresses:
+      - PrivateIpAddress: "172.31.13.215"
+        Primary: true
+      SecondaryPrivateIpAddressCount: 0
+      Ipv6PrefixCount: 0
+      Ipv4Prefixes: []
+      Ipv4PrefixCount: 0
+      GroupSet:
+      - "sg-0d86ccc66a13f5b46"
+      - "sg-0829dab2b088ac6db"
+      Ipv6Prefixes: []
+      SubnetId:
+        Ref: "EC2Subnet00subnet00c22ce20b776db4e00lChAd"
+      SourceDestCheck: true
+      InterfaceType: "interface"
+      Tags: []
+  EC2Volume00vol0b3d1f493815e0e0500ZyQHm:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::EC2::Volume"
+    DeletionPolicy: "Delete"
+    Properties:
+      MultiAttachEnabled: false
+      SnapshotId: "snap-00b91f7348b306d4e"
+      VolumeType: "gp3"
+      Encrypted: true
+      Size: 30
+      AutoEnableIO: true
+      AvailabilityZone: "ap-northeast-2a"
+      Throughput: 125
+      Iops: 3000
+      Tags: []
+  EC2SecurityGroup00sg0c9b5fd827d50d88500qAo0o:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::EC2::SecurityGroup"
+    DeletionPolicy: "Delete"
+    Properties:
+      GroupDescription: "Security group attached to mysql-test to allow EC2 instances\
+        \ with specific security groups attached to connect to the database. Modification\
+        \ could lead to connection loss."
+      GroupName: "rds-ec2-4"
+      VpcId:
+        Ref: "EC2VPC00vpc0ba2471045a96a398003Ek3v"
+      SecurityGroupIngress:
+      - IpProtocol: "tcp"
+        Description: "Rule to allow connections from EC2 instances with sg-0843cfa0b3da7f38e\
+          \ attached"
+        FromPort: 3306
+        SourceSecurityGroupId: "sg-0843cfa0b3da7f38e"
+        ToPort: 3306
+        SourceSecurityGroupOwnerId: "965037532757"
+      SecurityGroupEgress:
+      - IpProtocol: "-1"
+        FromPort: -1
+        ToPort: -1
+        CidrIp: "0.0.0.0/0"
+  RDSDBSubnetGroup00rdsec2dbsubnetgroup100EOLyj:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::RDS::DBSubnetGroup"
+    DeletionPolicy: "Delete"
+    Properties:
+      DBSubnetGroupDescription: "Created from the RDS Management Console"
+      SubnetIds:
+      - Ref: "EC2Subnet00subnet092d82a1a4c37a1e4004Egsn"
+      - Ref: "EC2Subnet00subnet00a347506ef4d8c1b00Z8Ptt"
+      - Ref: "EC2Subnet00subnet0c69787755bcf4f1e00iN7jN"
+      - Ref: "EC2Subnet00subnet0cac5329f8bd685a40088tgQ"
+      DBSubnetGroupName: "rds-ec2-db-subnet-group-1"
+  EC2Volume00vol0a89262086960565400LcG5K:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::EC2::Volume"
+    DeletionPolicy: "Delete"
+    Properties:
+      MultiAttachEnabled: false
+      SnapshotId: "snap-0b316d2290e49bcdb"
+      VolumeType: "gp3"
+      Encrypted: true
+      Size: 30
+      AutoEnableIO: true
+      AvailabilityZone: "ap-northeast-2a"
+      Throughput: 125
+      Iops: 3000
+      Tags: []
+  EC2SubnetNetworkAclAssociation00aclassoc0c997a3158544218d000tu4n:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::EC2::SubnetNetworkAclAssociation"
+    DeletionPolicy: "Delete"
+    Properties:
+      NetworkAclId:
+        Ref: "EC2NetworkAcl00acl09b97f26fc1bbaeac00oDCVL"
+      SubnetId:
+        Ref: "EC2Subnet00subnet0718424bbc22cbc0200RfHMe"
+  EC2VolumeAttachment00vol026f05924114e5b6900nZ6an:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::EC2::VolumeAttachment"
+    DeletionPolicy: "Delete"
+    Properties:
+      InstanceId: "i-03efd38ea8567fa29"
+      VolumeId: "vol-026f05924114e5b69"
+      Device: "/dev/sda1"
+  EC2NetworkInterface00eni05cc29c3f124324bb00fIZY0:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::EC2::NetworkInterface"
+    DeletionPolicy: "Delete"
+    Properties:
+      Description: ""
+      PrivateIpAddress: "172.31.4.21"
+      PrivateIpAddresses:
+      - PrivateIpAddress: "172.31.4.21"
+        Primary: true
+      SecondaryPrivateIpAddressCount: 0
+      Ipv6PrefixCount: 0
+      Ipv4Prefixes: []
+      Ipv4PrefixCount: 0
+      GroupSet:
+      - "sg-0d86ccc66a13f5b46"
+      - "sg-0829dab2b088ac6db"
+      Ipv6Prefixes: []
+      SubnetId:
+        Ref: "EC2Subnet00subnet00c22ce20b776db4e00lChAd"
+      SourceDestCheck: true
+      InterfaceType: "interface"
+      Tags: []
+  EC2RouteTable00rtb0824c416beb63dc4400Ci3LF:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::EC2::RouteTable"
+    DeletionPolicy: "Delete"
+    Properties:
+      VpcId:
+        Ref: "EC2VPC00vpc0ba2471045a96a398003Ek3v"
+      Tags:
+      - Value: "RDS-Pvt-rt"
+        Key: "Name"
+      - Value: "RouteTable for RDS"
+        Key: "MockupTestType"
+  EC2Volume00vol06c0d89e39e4202a2006cSuo:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::EC2::Volume"
+    DeletionPolicy: "Delete"
+    Properties:
+      MultiAttachEnabled: false
+      SnapshotId: "snap-0b316d2290e49bcdb"
+      VolumeType: "gp3"
+      Encrypted: true
+      Size: 50
+      AutoEnableIO: true
+      AvailabilityZone: "ap-northeast-2a"
+      Throughput: 125
+      Iops: 3000
+      Tags: []
+  EC2VolumeAttachment00vol0476d50fc3f58688700Oo4Qx:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::EC2::VolumeAttachment"
+    DeletionPolicy: "Delete"
+    Properties:
+      InstanceId: "i-0f3880cdd1c1a2e2a"
+      VolumeId: "vol-0476d50fc3f586887"
+      Device: "/dev/sda1"
+  EC2SubnetNetworkAclAssociation00aclassoc035465fc2bcc0c8f000BEr9c:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::EC2::SubnetNetworkAclAssociation"
+    DeletionPolicy: "Delete"
+    Properties:
+      NetworkAclId:
+        Ref: "EC2NetworkAcl00acl09b97f26fc1bbaeac00oDCVL"
+      SubnetId:
+        Ref: "EC2Subnet00subnet0cac5329f8bd685a40088tgQ"
+  EC2Instance00i06d9401060b8420ee00K4g1x:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::EC2::Instance"
+    DeletionPolicy: "Delete"
+    Properties:
+      Tenancy: "default"
+      SecurityGroups:
+      - "launch-wizard-5"
+      - "ec2-rds-3"
+      - "ec2-rds-2"
+      - "ec2-rds-4"
+      PrivateIpAddress: "172.31.3.123"
+      UserData: "PHBvd2Vyc2hlbGw+CiMgLk5FVCBDb3JlIFJ1bnRpbWUg7ISk7LmYCiRkb3ROZXRDb3JlSW5zdGFsbGVyVXJpID0gImh0dHBzOi8vZG90bmV0d2VicmVsZWFzZXN0b3JhZ2UuYmxvYi5jb3JlLndpbmRvd3MubmV0L3J1bnRpbWUvMy4xLjMyL2RvdG5ldC1ydW50aW1lLTMuMS4zMi13aW4teDY0LmV4ZSIKJGRvdE5ldENvcmVJbnN0YWxsZXJEaXIgPSAiJGVudjpURU1QXGRvdG5ldC1pbnN0YWxsZXIiCiRkb3ROZXRDb3JlSW5zdGFsbGVyRmlsZSA9ICIkZG90TmV0Q29yZUluc3RhbGxlckRpclxkb3RuZXQtcnVudGltZS0zLjEuMzItd2luLXg2NC5leGUiCk5ldy1JdGVtIC1JdGVtVHlwZSBEaXJlY3RvcnkgLVBhdGggJGRvdE5ldENvcmVJbnN0YWxsZXJEaXIKSW52b2tlLVdlYlJlcXVlc3QgLVVyaSAkZG90TmV0Q29yZUluc3RhbGxlclVyaSAtT3V0RmlsZSAkZG90TmV0Q29yZUluc3RhbGxlckZpbGUKU3RhcnQtUHJvY2VzcyAtRmlsZVBhdGggJGRvdE5ldENvcmVJbnN0YWxsZXJGaWxlIC1BcmdzICIvaW5zdGFsbCAvcXVpZXQgL25vcmVzdGFydCIgLVdhaXQKCiMgQVdTIFRvb2xzIGZvciBQb3dlclNoZWxsIOyEpOy5mApJbnN0YWxsLU1vZHVsZSAtTmFtZSBBV1NQb3dlclNoZWxsLk5ldENvcmUgLUZvcmNlCgojIFBvd2VyU2hlbGwg7Iuk7ZaJIOygleyxhSDshKTsoJUKU2V0LUV4ZWN1dGlvblBvbGljeSBSZW1vdGVTaWduZWQKPC9wb3dlcnNoZWxsPg=="
+      BlockDeviceMappings:
+      - Ebs:
+          SnapshotId: "snap-00b91f7348b306d4e"
+          VolumeType: "gp3"
+          Iops: 3000
+          VolumeSize: 30
+          Encrypted: false
+          DeleteOnTermination: true
+        DeviceName: "/dev/sda1"
+      IamInstanceProfile:
+        Ref: "IAMInstanceProfile00MyTestRoleForEC200cHcYB"
+      SubnetId:
+        Ref: "EC2Subnet00subnet00c22ce20b776db4e00lChAd"
+      EbsOptimized: true
+      Volumes:
+      - VolumeId: "vol-0b7acc03c9ea2c7a5"
+        Device: "/dev/sda1"
+      NetworkInterfaces:
+      - PrivateIpAddresses:
+        - PrivateIpAddress: "172.31.3.123"
+          Primary: true
+        SecondaryPrivateIpAddressCount: 0
+        DeviceIndex: "0"
+        GroupSet:
+        - Ref: "EC2SecurityGroup00sg0d86ccc66a13f5b4600Ea2tP"
+        - Ref: "EC2SecurityGroup00sg05445c3fa1244f34d00z1iSZ"
+        - Ref: "EC2SecurityGroup00sg0829dab2b088ac6db00KmFNy"
+        - Ref: "EC2SecurityGroup00sg0843cfa0b3da7f38e00MS2X4"
+        Ipv6Addresses: []
+        SubnetId:
+          Ref: "EC2Subnet00subnet00c22ce20b776db4e00lChAd"
+        AssociatePublicIpAddress: false
+        NetworkInterfaceId:
+          Ref: "EC2NetworkInterface00eni04caec707edb9e53900mphPf"
+        DeleteOnTermination: true
+      ImageId: "ami-07427619b8e8c799b"
+      InstanceType: "c6in.4xlarge"
+      Monitoring: false
+      Tags:
+      - Value: "Test-Middle #4"
+        Key: "Name"
+      InstanceInitiatedShutdownBehavior: "stop"
+      CpuOptions:
+        ThreadsPerCore: 2
+        CoreCount: 8
+      AvailabilityZone: "ap-northeast-2a"
+      PrivateDnsNameOptions:
+        EnableResourceNameDnsARecord: true
+        HostnameType: "ip-name"
+        EnableResourceNameDnsAAAARecord: false
+      SecurityGroupIds:
+      - "sg-0d86ccc66a13f5b46"
+      - "sg-05445c3fa1244f34d"
+      - "sg-0829dab2b088ac6db"
+      - "sg-0843cfa0b3da7f38e"
+      DisableApiTermination: false
+      KeyName: "EC2 Tutorial"
+      SourceDestCheck: true
+      PlacementGroupName: ""
+      VpcId: "vpc-0ba2471045a96a398"
+      State:
+        Code: "80"
+        Name: "stopped"
+      CreditSpecification:
+        CPUCredits: "standard"
+  EC2SecurityGroup00sg0829dab2b088ac6db00KmFNy:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::EC2::SecurityGroup"
+    DeletionPolicy: "Delete"
+    Properties:
+      GroupDescription: "Security group attached to instances to securely connect\
+        \ to aurora. Modification could lead to connection loss."
+      GroupName: "ec2-rds-2"
+      VpcId:
+        Ref: "EC2VPC00vpc0ba2471045a96a398003Ek3v"
+      SecurityGroupEgress:
+      - IpProtocol: "tcp"
+        DestinationSecurityGroupId:
+          Fn::GetAtt:
+          - "EC2SecurityGroup00sg0284d2fe9a2b1e1da00hxDZ2"
+          - "GroupId"
+        Description: "Rule to allow connections to aurora from any instances this\
+          \ security group is attached to"
+        FromPort: 3306
+        ToPort: 3306
+      Tags:
+      - Value: "Security Group"
+        Key: "MockupTestType"
+  EC2SecurityGroup00sg05df547596e1a9a2300Gq0Fg:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::EC2::SecurityGroup"
+    DeletionPolicy: "Delete"
+    Properties:
+      GroupDescription: "Security group attached to instances to securely connect\
+        \ to aurora-24. Modification could lead to connection loss."
+      GroupName: "ec2-rds-5"
+      VpcId:
+        Ref: "EC2VPC00vpc0ba2471045a96a398003Ek3v"
+      SecurityGroupEgress:
+      - IpProtocol: "tcp"
+        DestinationSecurityGroupId:
+          Fn::GetAtt:
+          - "EC2SecurityGroup00sg010f93cc4aec1454000QosFS"
+          - "GroupId"
+        Description: "Rule to allow connections to aurora-24 from any instances this\
+          \ security group is attached to"
+        FromPort: 3306
+        ToPort: 3306
+  EC2SecurityGroup00sg0d86ccc66a13f5b4600Ea2tP:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::EC2::SecurityGroup"
+    DeletionPolicy: "Delete"
+    Properties:
+      GroupDescription: "launch-wizard-5 created 2024-03-07T08:56:52.546Z"
+      GroupName: "launch-wizard-5"
+      VpcId:
+        Ref: "EC2VPC00vpc0ba2471045a96a398003Ek3v"
+      SecurityGroupIngress:
+      - CidrIp: "121.131.242.45/32"
+        IpProtocol: "tcp"
+        FromPort: 22
+        ToPort: 22
+      - IpProtocol: "tcp"
+        FromPort: 0
+        SourceSecurityGroupId: "sg-04505be9b0d809b02"
+        ToPort: 0
+        SourceSecurityGroupOwnerId: "965037532757"
+      - CidrIp: "121.131.242.45/32"
+        IpProtocol: "tcp"
+        FromPort: 3389
+        ToPort: 3389
+      - CidrIp: "211.36.149.18/32"
+        IpProtocol: "tcp"
+        FromPort: 3389
+        ToPort: 3389
+      - CidrIp: "121.131.182.165/32"
+        IpProtocol: "tcp"
+        FromPort: 3389
+        ToPort: 3389
+      - CidrIp: "14.32.241.219/32"
+        IpProtocol: "tcp"
+        FromPort: 3389
+        ToPort: 3389
+      - CidrIp: "15.248.4.55/32"
+        IpProtocol: "tcp"
+        FromPort: 3389
+        ToPort: 3389
+      - CidrIp: "15.248.4.63/32"
+        IpProtocol: "tcp"
+        FromPort: 3389
+        ToPort: 3389
+      - CidrIp: "15.248.4.245/32"
+        IpProtocol: "tcp"
+        FromPort: 3389
+        ToPort: 3389
+      - CidrIp: "15.248.4.241/32"
+        IpProtocol: "tcp"
+        FromPort: 3389
+        ToPort: 3389
+      - CidrIp: "15.248.4.244/32"
+        IpProtocol: "tcp"
+        FromPort: 3389
+        ToPort: 3389
+      - CidrIp: "117.111.13.69/32"
+        IpProtocol: "tcp"
+        FromPort: 3389
+        ToPort: 3389
+      SecurityGroupEgress:
+      - CidrIp: "0.0.0.0/0"
+        IpProtocol: "-1"
+        FromPort: -1
+        ToPort: -1
+      - CidrIp: "0.0.0.0/0"
+        IpProtocol: "tcp"
+        FromPort: 443
+        ToPort: 443
+  EC2Volume00vol021447189d852454300j0TY6:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::EC2::Volume"
+    DeletionPolicy: "Delete"
+    Properties:
+      MultiAttachEnabled: false
+      SnapshotId: "snap-0b316d2290e49bcdb"
+      VolumeType: "gp3"
+      Encrypted: true
+      Size: 50
+      AutoEnableIO: true
+      AvailabilityZone: "ap-northeast-2a"
+      Throughput: 125
+      Iops: 3000
+      Tags: []
+  EC2VolumeAttachment00vol06c0d89e39e4202a200M1bVo:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::EC2::VolumeAttachment"
+    DeletionPolicy: "Delete"
+    Properties:
+      InstanceId: "i-06690e537d52903df"
+      VolumeId: "vol-06c0d89e39e4202a2"
+      Device: "/dev/sda1"
+  EC2Volume00vol0b7acc03c9ea2c7a5002s93h:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::EC2::Volume"
+    DeletionPolicy: "Delete"
+    Properties:
+      MultiAttachEnabled: false
+      SnapshotId: "snap-00b91f7348b306d4e"
+      VolumeType: "gp3"
+      Encrypted: true
+      Size: 30
+      AutoEnableIO: true
+      AvailabilityZone: "ap-northeast-2a"
+      Throughput: 125
+      Iops: 3000
+      Tags: []
+  EC2Volume00vol09bd2ccf8c338ab9900XjAqN:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::EC2::Volume"
+    DeletionPolicy: "Delete"
+    Properties:
+      MultiAttachEnabled: false
+      SnapshotId: "snap-00b91f7348b306d4e"
+      VolumeType: "gp3"
+      Encrypted: true
+      Size: 30
+      AutoEnableIO: true
+      AvailabilityZone: "ap-northeast-2a"
+      Throughput: 125
+      Iops: 3000
+      Tags:
+      - Value: "EBS"
+        Key: "MockupTestType"
+  EC2NetworkInterface00eni084b6d62570aa383e00T0DFO:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::EC2::NetworkInterface"
+    DeletionPolicy: "Delete"
+    Properties:
+      Description: ""
+      PrivateIpAddress: "172.31.9.21"
+      PrivateIpAddresses:
+      - PrivateIpAddress: "172.31.9.21"
+        Primary: true
+      SecondaryPrivateIpAddressCount: 0
+      Ipv6PrefixCount: 0
+      Ipv4Prefixes: []
+      Ipv4PrefixCount: 0
+      GroupSet:
+      - "sg-0d86ccc66a13f5b46"
+      - "sg-05445c3fa1244f34d"
+      - "sg-0829dab2b088ac6db"
+      - "sg-0843cfa0b3da7f38e"
+      Ipv6Prefixes: []
+      SubnetId:
+        Ref: "EC2Subnet00subnet00c22ce20b776db4e00lChAd"
+      SourceDestCheck: true
+      InterfaceType: "interface"
+      Tags: []
+  EC2RouteTable00rtb09ff274f1b9f9419d00wSyZZ:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::EC2::RouteTable"
+    DeletionPolicy: "Delete"
+    Properties:
+      VpcId:
+        Ref: "EC2VPC00vpc0ba2471045a96a398003Ek3v"
+      Tags:
+      - Value: "RouteTable"
+        Key: "MockupTestType"
+  EC2NetworkInterface00eni043326f7070bb5e6f00puaiW:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::EC2::NetworkInterface"
+    DeletionPolicy: "Delete"
+    Properties:
+      Description: ""
+      PrivateIpAddress: "172.31.11.160"
+      PrivateIpAddresses:
+      - PrivateIpAddress: "172.31.11.160"
+        Primary: true
+      SecondaryPrivateIpAddressCount: 0
+      Ipv6PrefixCount: 0
+      Ipv4Prefixes: []
+      Ipv4PrefixCount: 0
+      GroupSet:
+      - "sg-0d86ccc66a13f5b46"
+      - "sg-0829dab2b088ac6db"
+      Ipv6Prefixes: []
+      SubnetId:
+        Ref: "EC2Subnet00subnet00c22ce20b776db4e00lChAd"
+      SourceDestCheck: true
+      InterfaceType: "interface"
+      Tags: []
+  EC2Instance00i0097d640ec9ac5a60008X5zq:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::EC2::Instance"
+    DeletionPolicy: "Delete"
+    Properties:
+      Tenancy: "default"
+      SecurityGroups:
+      - "launch-wizard-5"
+      - "ec2-rds-3"
+      - "ec2-rds-2"
+      - "ec2-rds-4"
+      PrivateIpAddress: "172.31.3.34"
+      UserData: "PHBvd2Vyc2hlbGw+CiMgLk5FVCBDb3JlIFJ1bnRpbWUg7ISk7LmYCiRkb3ROZXRDb3JlSW5zdGFsbGVyVXJpID0gImh0dHBzOi8vZG90bmV0d2VicmVsZWFzZXN0b3JhZ2UuYmxvYi5jb3JlLndpbmRvd3MubmV0L3J1bnRpbWUvMy4xLjMyL2RvdG5ldC1ydW50aW1lLTMuMS4zMi13aW4teDY0LmV4ZSIKJGRvdE5ldENvcmVJbnN0YWxsZXJEaXIgPSAiJGVudjpURU1QXGRvdG5ldC1pbnN0YWxsZXIiCiRkb3ROZXRDb3JlSW5zdGFsbGVyRmlsZSA9ICIkZG90TmV0Q29yZUluc3RhbGxlckRpclxkb3RuZXQtcnVudGltZS0zLjEuMzItd2luLXg2NC5leGUiCk5ldy1JdGVtIC1JdGVtVHlwZSBEaXJlY3RvcnkgLVBhdGggJGRvdE5ldENvcmVJbnN0YWxsZXJEaXIKSW52b2tlLVdlYlJlcXVlc3QgLVVyaSAkZG90TmV0Q29yZUluc3RhbGxlclVyaSAtT3V0RmlsZSAkZG90TmV0Q29yZUluc3RhbGxlckZpbGUKU3RhcnQtUHJvY2VzcyAtRmlsZVBhdGggJGRvdE5ldENvcmVJbnN0YWxsZXJGaWxlIC1BcmdzICIvaW5zdGFsbCAvcXVpZXQgL25vcmVzdGFydCIgLVdhaXQKCiMgQVdTIFRvb2xzIGZvciBQb3dlclNoZWxsIOyEpOy5mApJbnN0YWxsLU1vZHVsZSAtTmFtZSBBV1NQb3dlclNoZWxsLk5ldENvcmUgLUZvcmNlCgojIFBvd2VyU2hlbGwg7Iuk7ZaJIOygleyxhSDshKTsoJUKU2V0LUV4ZWN1dGlvblBvbGljeSBSZW1vdGVTaWduZWQKPC9wb3dlcnNoZWxsPg=="
+      BlockDeviceMappings:
+      - Ebs:
+          SnapshotId: "snap-00b91f7348b306d4e"
+          VolumeType: "gp3"
+          Iops: 3000
+          VolumeSize: 30
+          Encrypted: false
+          DeleteOnTermination: true
+        DeviceName: "/dev/sda1"
+      IamInstanceProfile:
+        Ref: "IAMInstanceProfile00MyTestRoleForEC200cHcYB"
+      SubnetId:
+        Ref: "EC2Subnet00subnet00c22ce20b776db4e00lChAd"
+      EbsOptimized: true
+      Volumes:
+      - VolumeId: "vol-0b3d1f493815e0e05"
+        Device: "/dev/sda1"
+      NetworkInterfaces:
+      - PrivateIpAddresses:
+        - PrivateIpAddress: "172.31.3.34"
+          Primary: true
+        SecondaryPrivateIpAddressCount: 0
+        DeviceIndex: "0"
+        GroupSet:
+        - Ref: "EC2SecurityGroup00sg0d86ccc66a13f5b4600Ea2tP"
+        - Ref: "EC2SecurityGroup00sg05445c3fa1244f34d00z1iSZ"
+        - Ref: "EC2SecurityGroup00sg0829dab2b088ac6db00KmFNy"
+        - Ref: "EC2SecurityGroup00sg0843cfa0b3da7f38e00MS2X4"
+        Ipv6Addresses: []
+        SubnetId:
+          Ref: "EC2Subnet00subnet00c22ce20b776db4e00lChAd"
+        AssociatePublicIpAddress: false
+        NetworkInterfaceId:
+          Ref: "EC2NetworkInterface00eni09206fc98974bf1d200o8OAZ"
+        DeleteOnTermination: true
+      ImageId: "ami-07427619b8e8c799b"
+      InstanceType: "c6in.4xlarge"
+      Monitoring: false
+      Tags:
+      - Value: "Test-Middle #6"
+        Key: "Name"
+      InstanceInitiatedShutdownBehavior: "stop"
+      CpuOptions:
+        ThreadsPerCore: 2
+        CoreCount: 8
+      AvailabilityZone: "ap-northeast-2a"
+      PrivateDnsNameOptions:
+        EnableResourceNameDnsARecord: true
+        HostnameType: "ip-name"
+        EnableResourceNameDnsAAAARecord: false
+      SecurityGroupIds:
+      - "sg-0d86ccc66a13f5b46"
+      - "sg-05445c3fa1244f34d"
+      - "sg-0829dab2b088ac6db"
+      - "sg-0843cfa0b3da7f38e"
+      DisableApiTermination: false
+      KeyName: "EC2 Tutorial"
+      SourceDestCheck: true
+      PlacementGroupName: ""
+      VpcId: "vpc-0ba2471045a96a398"
+      State:
+        Code: "80"
+        Name: "stopped"
+      CreditSpecification:
+        CPUCredits: "standard"
+  EC2SecurityGroup00sg0284d2fe9a2b1e1da00hxDZ2:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::EC2::SecurityGroup"
+    DeletionPolicy: "Delete"
+    Properties:
+      GroupDescription: "Security group attached to aurora to allow EC2 instances\
+        \ with specific security groups attached to connect to the database. Modification\
+        \ could lead to connection loss."
+      GroupName: "rds-ec2-2"
+      VpcId:
+        Ref: "EC2VPC00vpc0ba2471045a96a398003Ek3v"
+      SecurityGroupIngress:
+      - CidrIp: "15.248.4.244/32"
+        IpProtocol: "tcp"
+        FromPort: 3306
+        ToPort: 3306
+      - IpProtocol: "tcp"
+        Description: "Rule to allow connections from EC2 instances with sg-0829dab2b088ac6db\
+          \ attached"
+        FromPort: 3306
+        SourceSecurityGroupId: "sg-0829dab2b088ac6db"
+        ToPort: 3306
+        SourceSecurityGroupOwnerId: "965037532757"
+      - IpProtocol: "tcp"
+        FromPort: 3306
+        SourceSecurityGroupId: "sg-05d4842f7048958bd"
+        ToPort: 3306
+        SourceSecurityGroupOwnerId: "965037532757"
+      SecurityGroupEgress:
+      - IpProtocol: "-1"
+        FromPort: -1
+        ToPort: -1
+        CidrIp: "0.0.0.0/0"
+  IAMRole00MyTestRoleForEC200Bw2b9:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::IAM::Role"
+    DeletionPolicy: "Delete"
+    Properties:
+      Path: "/"
+      ManagedPolicyArns:
+      - "arn:aws:iam::aws:policy/service-role/AmazonEC2RoleforSSM"
+      - "arn:aws:iam::aws:policy/AmazonS3ReadOnlyAccess"
+      - "arn:aws:iam::aws:policy/AmazonEC2ReadOnlyAccess"
+      - "arn:aws:iam::aws:policy/CloudWatchAgentAdminPolicy"
+      - "arn:aws:iam::aws:policy/CloudWatchLogsFullAccess"
+      - "arn:aws:iam::aws:policy/IAMReadOnlyAccess"
+      - "arn:aws:iam::aws:policy/CloudWatchAgentServerPolicy"
+      - "arn:aws:iam::aws:policy/AmazonSSMManagedInstanceCore"
+      - "arn:aws:iam::aws:policy/AmazonRDSFullAccess"
+      - "arn:aws:iam::aws:policy/CloudWatchFullAccess"
+      MaxSessionDuration: 3600
+      RoleName: "MyTestRoleForEC2"
+      Description: "Allows EC2 instances to call AWS services on your behalf."
+      Policies:
+      - PolicyDocument:
+          Version: "2012-10-17"
+          Statement:
+          - Resource: "arn:aws:s3:::mockupdev-test-bucket/*"
+            Action: "s3:GetObject"
+            Effect: "Allow"
+        PolicyName: "MyMockupTestS3ReadOnlyAccess"
+      AssumeRolePolicyDocument:
+        Version: "2012-10-17"
+        Statement:
+        - Action: "sts:AssumeRole"
+          Effect: "Allow"
+          Principal:
+            Service: "ec2.amazonaws.com"
+      Tags:
+      - Value: "IAM Role for EC2"
+        Key: "MockupTestType"
+  EC2NetworkInterface00eni04caec707edb9e53900mphPf:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::EC2::NetworkInterface"
+    DeletionPolicy: "Delete"
+    Properties:
+      Description: ""
+      PrivateIpAddress: "172.31.3.123"
+      PrivateIpAddresses:
+      - PrivateIpAddress: "172.31.3.123"
+        Primary: true
+      SecondaryPrivateIpAddressCount: 0
+      Ipv6PrefixCount: 0
+      Ipv4Prefixes: []
+      Ipv4PrefixCount: 0
+      GroupSet:
+      - "sg-0d86ccc66a13f5b46"
+      - "sg-05445c3fa1244f34d"
+      - "sg-0829dab2b088ac6db"
+      - "sg-0843cfa0b3da7f38e"
+      Ipv6Prefixes: []
+      SubnetId:
+        Ref: "EC2Subnet00subnet00c22ce20b776db4e00lChAd"
+      SourceDestCheck: true
+      InterfaceType: "interface"
+      Tags: []
+  EC2NetworkInterface00eni09206fc98974bf1d200o8OAZ:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::EC2::NetworkInterface"
+    DeletionPolicy: "Delete"
+    Properties:
+      Description: ""
+      PrivateIpAddress: "172.31.3.34"
+      PrivateIpAddresses:
+      - PrivateIpAddress: "172.31.3.34"
+        Primary: true
+      SecondaryPrivateIpAddressCount: 0
+      Ipv6PrefixCount: 0
+      Ipv4Prefixes: []
+      Ipv4PrefixCount: 0
+      GroupSet:
+      - "sg-0d86ccc66a13f5b46"
+      - "sg-05445c3fa1244f34d"
+      - "sg-0829dab2b088ac6db"
+      - "sg-0843cfa0b3da7f38e"
+      Ipv6Prefixes: []
+      SubnetId:
+        Ref: "EC2Subnet00subnet00c22ce20b776db4e00lChAd"
+      SourceDestCheck: true
+      InterfaceType: "interface"
+      Tags: []
+  EC2SecurityGroup00sg05f859e0a8fc698dc00HFuyG:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::EC2::SecurityGroup"
+    DeletionPolicy: "Delete"
+    Properties:
+      GroupDescription: "Security group attached to instances to securely connect\
+        \ to test-database. Modification could lead to connection loss."
+      GroupName: "ec2-rds-1"
+      VpcId:
+        Ref: "EC2VPC00vpc0ba2471045a96a398003Ek3v"
+      SecurityGroupIngress:
+      - CidrIp: "121.131.242.45/32"
+        IpProtocol: "tcp"
+        FromPort: 3306
+        ToPort: 3306
+      SecurityGroupEgress:
+      - IpProtocol: "tcp"
+        DestinationSecurityGroupId:
+          Fn::GetAtt:
+          - "EC2SecurityGroup00sg0608829effb6c93bc00tO5h2"
+          - "GroupId"
+        Description: "Rule to allow connections to test-database from any instances\
+          \ this security group is attached to"
+        FromPort: 3306
+        ToPort: 3306
+  NeptuneDBCluster00aurora00ZVnyi:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::Neptune::DBCluster"
+    DeletionPolicy: "Delete"
+    Properties:
+      StorageEncrypted: true
+      EngineVersion: "8.0.mysql_aurora.3.04.1"
+      KmsKeyId: "arn:aws:kms:ap-northeast-2:965037532757:key/133cc9e9-e36f-45d0-9270-2e33015fcd48"
+      AssociatedRoles:
+      - RoleArn: "arn:aws:iam::965037532757:role/aws-service-role/rds.amazonaws.com/AWSServiceRoleForRDS"
+        FeatureName: "neptune-feature-name"
+      AvailabilityZones:
+      - "ap-northeast-2b"
+      - "ap-northeast-2a"
+      - "ap-northeast-2d"
+      DBClusterIdentifier: "aurora"
+      PreferredMaintenanceWindow: "thu:16:47-thu:17:17"
+      IamAuthEnabled: false
+      DBSubnetGroupName: "rds-ec2-db-subnet-group-1"
+      DeletionProtection: true
+      PreferredBackupWindow: "18:27-18:57"
+      DBPort: 3306
+      VpcSecurityGroupIds:
+      - "sg-036acef45f00197de"
+      - "sg-0284d2fe9a2b1e1da"
+      CopyTagsToSnapshot: true
+      DBClusterParameterGroupName: "aurora-mysql-memory-optimized"
+      BackupRetentionPeriod: 1
+      Tags:
+      - Value: "DB Cluster"
+        Key: "MockupTestType"
+      - Value: "Aurora"
+        Key: "MockupKey"
+      - Value: "MockupServer"
+        Key: "TestType"
+      EnableCloudwatchLogsExports:
+      - "error"
+      - "slowquery"
+  EC2VolumeAttachment00vol0919c67d6aeeba28000plz8H:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::EC2::VolumeAttachment"
+    DeletionPolicy: "Delete"
+    Properties:
+      InstanceId: "i-096e9241cc85b54c0"
+      VolumeId: "vol-0919c67d6aeeba280"
+      Device: "/dev/sda1"
+  EC2Volume00vol0976380feec44b49400C6l3b:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::EC2::Volume"
+    DeletionPolicy: "Delete"
+    Properties:
+      MultiAttachEnabled: false
+      SnapshotId: "snap-00b91f7348b306d4e"
+      VolumeType: "gp3"
+      Encrypted: true
+      Size: 30
+      AutoEnableIO: true
+      AvailabilityZone: "ap-northeast-2a"
+      Throughput: 125
+      Iops: 3000
+      Tags: []
+  EC2NetworkInterface00eni036171f0c7b7d77ae00enVAd:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::EC2::NetworkInterface"
+    DeletionPolicy: "Delete"
+    Properties:
+      Description: ""
+      PrivateIpAddress: "172.31.3.89"
+      PrivateIpAddresses:
+      - PrivateIpAddress: "172.31.3.89"
+        Primary: true
+      SecondaryPrivateIpAddressCount: 0
+      Ipv6PrefixCount: 0
+      Ipv4Prefixes: []
+      Ipv4PrefixCount: 0
+      GroupSet:
+      - "sg-0d86ccc66a13f5b46"
+      - "sg-05445c3fa1244f34d"
+      - "sg-0829dab2b088ac6db"
+      - "sg-0843cfa0b3da7f38e"
+      Ipv6Prefixes: []
+      SubnetId:
+        Ref: "EC2Subnet00subnet00c22ce20b776db4e00lChAd"
+      SourceDestCheck: true
+      InterfaceType: "interface"
+      Tags: []
+  EC2NetworkInterface00eni090f5fa5d9593968b00nn26l:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::EC2::NetworkInterface"
+    DeletionPolicy: "Delete"
+    Properties:
+      Description: ""
+      PrivateIpAddress: "172.31.3.133"
+      PrivateIpAddresses:
+      - PrivateIpAddress: "172.31.3.133"
+        Primary: true
+      SecondaryPrivateIpAddressCount: 0
+      Ipv6PrefixCount: 0
+      Ipv4Prefixes: []
+      Ipv4PrefixCount: 0
+      GroupSet:
+      - "sg-0d86ccc66a13f5b46"
+      - "sg-05445c3fa1244f34d"
+      - "sg-0829dab2b088ac6db"
+      - "sg-0843cfa0b3da7f38e"
+      Ipv6Prefixes: []
+      SubnetId:
+        Ref: "EC2Subnet00subnet00c22ce20b776db4e00lChAd"
+      SourceDestCheck: true
+      InterfaceType: "interface"
+      Tags: []
+  EC2VolumeAttachment00vol0172eb8efa4c1c702009ZJ3r:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::EC2::VolumeAttachment"
+    DeletionPolicy: "Delete"
+    Properties:
+      InstanceId: "i-08f4620aa8627ad62"
+      VolumeId: "vol-0172eb8efa4c1c702"
+      Device: "/dev/sda1"
+  EC2SubnetNetworkAclAssociation00aclassoc0570e7b387ea31428004hS59:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::EC2::SubnetNetworkAclAssociation"
+    DeletionPolicy: "Delete"
+    Properties:
+      NetworkAclId:
+        Ref: "EC2NetworkAcl00acl09b97f26fc1bbaeac00oDCVL"
+      SubnetId:
+        Ref: "EC2Subnet00subnet092d82a1a4c37a1e4004Egsn"
+  EC2SubnetNetworkAclAssociation00aclassoc01d4f89a4d151742500QSwCs:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::EC2::SubnetNetworkAclAssociation"
+    DeletionPolicy: "Delete"
+    Properties:
+      NetworkAclId:
+        Ref: "EC2NetworkAcl00acl09b97f26fc1bbaeac00oDCVL"
+      SubnetId:
+        Ref: "EC2Subnet00subnet086663c14c0f832fb00eks08"
+  EC2Instance00i05aee49c155bf690b00aEtod:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::EC2::Instance"
+    DeletionPolicy: "Delete"
+    Properties:
+      Tenancy: "default"
+      SecurityGroups:
+      - "launch-wizard-5"
+      - "ec2-rds-2"
+      PrivateIpAddress: "172.31.11.160"
+      UserData: "PHBvd2Vyc2hlbGw+CiMgLk5FVCBDb3JlIFJ1bnRpbWUg7ISk7LmYCiRkb3ROZXRDb3JlSW5zdGFsbGVyVXJpID0gImh0dHBzOi8vZG90bmV0d2VicmVsZWFzZXN0b3JhZ2UuYmxvYi5jb3JlLndpbmRvd3MubmV0L3J1bnRpbWUvMy4xLjMyL2RvdG5ldC1ydW50aW1lLTMuMS4zMi13aW4teDY0LmV4ZSIKJGRvdE5ldENvcmVJbnN0YWxsZXJEaXIgPSAiJGVudjpURU1QXGRvdG5ldC1pbnN0YWxsZXIiCiRkb3ROZXRDb3JlSW5zdGFsbGVyRmlsZSA9ICIkZG90TmV0Q29yZUluc3RhbGxlckRpclxkb3RuZXQtcnVudGltZS0zLjEuMzItd2luLXg2NC5leGUiCk5ldy1JdGVtIC1JdGVtVHlwZSBEaXJlY3RvcnkgLVBhdGggJGRvdE5ldENvcmVJbnN0YWxsZXJEaXIKSW52b2tlLVdlYlJlcXVlc3QgLVVyaSAkZG90TmV0Q29yZUluc3RhbGxlclVyaSAtT3V0RmlsZSAkZG90TmV0Q29yZUluc3RhbGxlckZpbGUKU3RhcnQtUHJvY2VzcyAtRmlsZVBhdGggJGRvdE5ldENvcmVJbnN0YWxsZXJGaWxlIC1BcmdzICIvaW5zdGFsbCAvcXVpZXQgL25vcmVzdGFydCIgLVdhaXQKCiMgQVdTIFRvb2xzIGZvciBQb3dlclNoZWxsIOyEpOy5mApJbnN0YWxsLU1vZHVsZSAtTmFtZSBBV1NQb3dlclNoZWxsLk5ldENvcmUgLUZvcmNlCgojIFBvd2VyU2hlbGwg7Iuk7ZaJIOygleyxhSDshKTsoJUKU2V0LUV4ZWN1dGlvblBvbGljeSBSZW1vdGVTaWduZWQKCiMgSW5zdGFsbCBBV1MgVG9vbHMKJFByb2dyZXNzUHJlZmVyZW5jZSA9ICdTaWxlbnRseUNvbnRpbnVlJwpta2RpciBDOlxQcm9ncmFtRGF0YVxBbWF6b25cQW1hem9uQVdTQWdlbnRzIC1Gb3JjZQpJbnZva2UtV2ViUmVxdWVzdCAtVXJpIGh0dHBzOi8vczMuYW1hem9uYXdzLmNvbS9lYzItZG93bmxvYWRzLXdpbmRvd3MvQW1hem9uQVdTQWdlbnRzLnppcCAtT3V0RmlsZSBDOlxQcm9ncmFtRGF0YVxBbWF6b25cQW1hem9uQVdTQWdlbnRzXEFtYXpvbkFXU0FnZW50cy56aXAKRXhwYW5kLUFyY2hpdmUgLVBhdGggQzpcUHJvZ3JhbURhdGFcQW1hem9uXEFtYXpvbkFXU0FnZW50c1xBbWF6b25BV1NBZ2VudHMuemlwIC1EZXN0aW5hdGlvblBhdGggQzpcUHJvZ3JhbURhdGFcQW1hem9uXEFtYXpvbkFXU0FnZW50cyAtRm9yY2UKJGVudjpQYXRoICs9ICI7QzpcUHJvZ3JhbURhdGFcQW1hem9uXEFtYXpvbkFXU0FnZW50cyIKCiMgSW5zdGFsbCBTU00gQWdlbnQKU3RhcnQtUHJvY2VzcyAtRmlsZVBhdGggQzpcUHJvZ3JhbURhdGFcQW1hem9uXEFtYXpvbkFXU0FnZW50c1xBbWF6b25TU01BZ2VudC5leGUgLUFyZ3VtZW50TGlzdCAiL0luc3RhbGwgL1F1aWV0IiAtV2FpdAoKIyBDb25maWd1cmUgQ2xvdWRXYXRjaCBBZ2VudAokY3dBZ2VudENvbmZpZyA9IEAiCnsKICAibG9ncyI6IHsKICAgICJsb2dzX2NvbGxlY3RlZCI6IHsKICAgICAgImZpbGVzIjogewogICAgICAgICJjb2xsZWN0X2xpc3QiOiBbCiAgICAgICAgICB7CiAgICAgICAgICAgICJmaWxlX3BhdGgiOiAiQzpcXHRlc3RjbGllbnRcXGF1cm9yYVxcbG9nLnR4dCIsCiAgICAgICAgICAgICJsb2dfZ3JvdXBfbmFtZSI6ICJhdXJvcmEtdGVzdC1ncm91cCIsCiAgICAgICAgICAgICJsb2dfc3RyZWFtX25hbWUiOiAie2luc3RhbmNlX2lkfSIKICAgICAgICAgIH0sCiAgICAgICAgICB7CiAgICAgICAgICAgICJmaWxlX3BhdGgiOiAiQzpcXHRlc3RjbGllbnRcXG1zc3FsXFxsb2cudHh0IiwKICAgICAgICAgICAgImxvZ19ncm91cF9uYW1lIjogIm1zc3FsLXRlc3QtZ3JvdXAiLAogICAgICAgICAgICAibG9nX3N0cmVhbV9uYW1lIjogIntpbnN0YW5jZV9pZH0iCiAgICAgICAgICB9CiAgICAgICAgXQogICAgICB9CiAgICB9CiAgfQp9CiJACgokY3dBZ2VudENvbmZpZyB8IE91dC1GaWxlIC1GaWxlUGF0aCBDOlxQcm9ncmFtRGF0YVxBbWF6b25cQW1hem9uQVdTQWdlbnRzXGNvbmZpZy5qc29uIC1FbmNvZGluZyBBU0NJSSAtRm9yY2UKCiMgSW5zdGFsbCBDbG91ZFdhdGNoIEFnZW50ClN0YXJ0LVByb2Nlc3MgLUZpbGVQYXRoIEM6XFByb2dyYW1EYXRhXEFtYXpvblxBbWF6b25BV1NBZ2VudHNcQW1hem9uQ2xvdWRXYXRjaEFnZW50LmV4ZSAtQXJndW1lbnRMaXN0ICIvSW5zdGFsbCAvUXVpZXQiIC1XYWl0CgojIFN0YXJ0IENsb3VkV2F0Y2ggQWdlbnQKU3RhcnQtU2VydmljZSAtTmFtZSBBbWF6b25DbG91ZFdhdGNoQWdlbnQKPC9wb3dlcnNoZWxsPg=="
+      BlockDeviceMappings:
+      - Ebs:
+          SnapshotId: "snap-0b316d2290e49bcdb"
+          VolumeType: "gp3"
+          Iops: 3000
+          VolumeSize: 50
+          Encrypted: false
+          DeleteOnTermination: true
+        DeviceName: "/dev/sda1"
+      IamInstanceProfile:
+        Ref: "IAMInstanceProfile00MyTestRoleForEC200cHcYB"
+      SubnetId:
+        Ref: "EC2Subnet00subnet00c22ce20b776db4e00lChAd"
+      EbsOptimized: true
+      Volumes:
+      - VolumeId: "vol-0d50769a3766f4307"
+        Device: "/dev/sda1"
+      NetworkInterfaces:
+      - PrivateIpAddresses:
+        - PrivateIpAddress: "172.31.11.160"
+          Primary: true
+        SecondaryPrivateIpAddressCount: 0
+        DeviceIndex: "0"
+        GroupSet:
+        - Ref: "EC2SecurityGroup00sg0d86ccc66a13f5b4600Ea2tP"
+        - Ref: "EC2SecurityGroup00sg0829dab2b088ac6db00KmFNy"
+        Ipv6Addresses: []
+        SubnetId:
+          Ref: "EC2Subnet00subnet00c22ce20b776db4e00lChAd"
+        AssociatePublicIpAddress: false
+        NetworkInterfaceId:
+          Ref: "EC2NetworkInterface00eni043326f7070bb5e6f00puaiW"
+        DeleteOnTermination: true
+      ImageId: "ami-0d159154c576c21c3"
+      InstanceType: "c6in.4xlarge"
+      Monitoring: false
+      Tags:
+      - Value: "Test-Middle #11"
+        Key: "Name"
+      InstanceInitiatedShutdownBehavior: "stop"
+      CpuOptions:
+        ThreadsPerCore: 2
+        CoreCount: 8
+      AvailabilityZone: "ap-northeast-2a"
+      PrivateDnsNameOptions:
+        EnableResourceNameDnsARecord: true
+        HostnameType: "ip-name"
+        EnableResourceNameDnsAAAARecord: false
+      SecurityGroupIds:
+      - "sg-0d86ccc66a13f5b46"
+      - "sg-0829dab2b088ac6db"
+      DisableApiTermination: false
+      KeyName: "EC2 Tutorial"
+      SourceDestCheck: true
+      PlacementGroupName: ""
+      VpcId: "vpc-0ba2471045a96a398"
+      State:
+        Code: "80"
+        Name: "stopped"
+      CreditSpecification:
+        CPUCredits: "standard"
+  EC2VolumeAttachment00vol0976380feec44b49400QwvO6:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::EC2::VolumeAttachment"
+    DeletionPolicy: "Delete"
+    Properties:
+      InstanceId: "i-0bd4a5dbb5b6a1246"
+      VolumeId: "vol-0976380feec44b494"
+      Device: "/dev/sda1"
+  EC2Volume00vol0172eb8efa4c1c70200W1yze:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::EC2::Volume"
+    DeletionPolicy: "Delete"
+    Properties:
+      MultiAttachEnabled: false
+      SnapshotId: "snap-00b91f7348b306d4e"
+      VolumeType: "gp3"
+      Encrypted: true
+      Size: 30
+      AutoEnableIO: true
+      AvailabilityZone: "ap-northeast-2a"
+      Throughput: 125
+      Iops: 3000
+      Tags: []
+  EC2NetworkInterface00eni096d60480395ccf8d00d6rfE:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::EC2::NetworkInterface"
+    DeletionPolicy: "Delete"
+    Properties:
+      Description: ""
+      PrivateIpAddress: "172.31.0.76"
+      PrivateIpAddresses:
+      - PrivateIpAddress: "172.31.0.76"
+        Primary: true
+      SecondaryPrivateIpAddressCount: 0
+      Ipv6PrefixCount: 0
+      Ipv4Prefixes: []
+      Ipv4PrefixCount: 0
+      GroupSet:
+      - "sg-0d86ccc66a13f5b46"
+      - "sg-05df547596e1a9a23"
+      - "sg-05445c3fa1244f34d"
+      - "sg-0829dab2b088ac6db"
+      - "sg-0843cfa0b3da7f38e"
+      Ipv6Prefixes: []
+      SubnetId:
+        Ref: "EC2Subnet00subnet00c22ce20b776db4e00lChAd"
+      SourceDestCheck: true
+      InterfaceType: "interface"
+      Tags:
+      - Value: "Network Interface"
+        Key: "MockupTestType"
+  EC2SecurityGroup00sg0608829effb6c93bc00tO5h2:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::EC2::SecurityGroup"
+    DeletionPolicy: "Delete"
+    Properties:
+      GroupDescription: "Security group attached to test-database to allow EC2 instances\
+        \ with specific security groups attached to connect to the database. Modification\
+        \ could lead to connection loss."
+      GroupName: "rds-ec2-1"
+      VpcId:
+        Ref: "EC2VPC00vpc0ba2471045a96a398003Ek3v"
+      SecurityGroupIngress:
+      - CidrIp: "121.131.242.45/32"
+        IpProtocol: "tcp"
+        FromPort: 3306
+        ToPort: 3306
+      - IpProtocol: "tcp"
+        Description: "Rule to allow connections from EC2 instances with sg-05f859e0a8fc698dc\
+          \ attached"
+        FromPort: 3306
+        SourceSecurityGroupId: "sg-05f859e0a8fc698dc"
+        ToPort: 3306
+        SourceSecurityGroupOwnerId: "965037532757"
+      SecurityGroupEgress:
+      - IpProtocol: "-1"
+        FromPort: -1
+        ToPort: -1
+        CidrIp: "0.0.0.0/0"
+  EC2Subnet00subnet00c22ce20b776db4e00lChAd:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::EC2::Subnet"
+    DeletionPolicy: "Delete"
+    Properties:
+      VpcId:
+        Ref: "EC2VPC00vpc0ba2471045a96a398003Ek3v"
+      MapPublicIpOnLaunch: true
+      EnableDns64: false
+      AvailabilityZoneId: "apne2-az1"
+      PrivateDnsNameOptionsOnLaunch:
+        EnableResourceNameDnsARecord: false
+        HostnameType: "ip-name"
+        EnableResourceNameDnsAAAARecord: false
+      CidrBlock: "172.31.0.0/20"
+      Ipv6Native: false
+      Tags:
+      - Value: "Subnet"
+        Key: "MockupTestType"
+  EC2NetworkInterface00eni063020ab1e26bba0800DY55m:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::EC2::NetworkInterface"
+    DeletionPolicy: "Delete"
+    Properties:
+      Description: ""
+      PrivateIpAddress: "172.31.0.138"
+      PrivateIpAddresses:
+      - PrivateIpAddress: "172.31.0.138"
+        Primary: true
+      SecondaryPrivateIpAddressCount: 0
+      Ipv6PrefixCount: 0
+      Ipv4Prefixes: []
+      Ipv4PrefixCount: 0
+      GroupSet:
+      - "sg-0d86ccc66a13f5b46"
+      - "sg-05445c3fa1244f34d"
+      - "sg-0829dab2b088ac6db"
+      - "sg-0843cfa0b3da7f38e"
+      Ipv6Prefixes: []
+      SubnetId:
+        Ref: "EC2Subnet00subnet00c22ce20b776db4e00lChAd"
+      SourceDestCheck: true
+      InterfaceType: "interface"
+      Tags:
+      - Value: "EBS"
+        Key: "MockupTestType"
+  EC2Subnet00subnet092d82a1a4c37a1e4004Egsn:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::EC2::Subnet"
+    DeletionPolicy: "Delete"
+    Properties:
+      VpcId:
+        Ref: "EC2VPC00vpc0ba2471045a96a398003Ek3v"
+      MapPublicIpOnLaunch: false
+      EnableDns64: false
+      AvailabilityZoneId: "apne2-az4"
+      PrivateDnsNameOptionsOnLaunch:
+        EnableResourceNameDnsARecord: false
+        HostnameType: "ip-name"
+        EnableResourceNameDnsAAAARecord: false
+      CidrBlock: "172.31.65.128/25"
+      Ipv6Native: false
+      Tags:
+      - Value: "RDS-Pvt-subnet-4"
+        Key: "Name"
+      - Value: "Subnet for RDS"
+        Key: "MockupTestType"
+  EC2Instance00i03efd38ea8567fa2900yQ9q4:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::EC2::Instance"
+    DeletionPolicy: "Delete"
+    Properties:
+      Tenancy: "default"
+      SecurityGroups:
+      - "launch-wizard-5"
+      - "ec2-rds-3"
+      - "ec2-rds-2"
+      - "ec2-rds-4"
+      PrivateIpAddress: "172.31.11.130"
+      UserData: "PHBvd2Vyc2hlbGw+CiMgLk5FVCBDb3JlIFJ1bnRpbWUg7ISk7LmYCiRkb3ROZXRDb3JlSW5zdGFsbGVyVXJpID0gImh0dHBzOi8vZG90bmV0d2VicmVsZWFzZXN0b3JhZ2UuYmxvYi5jb3JlLndpbmRvd3MubmV0L3J1bnRpbWUvMy4xLjMyL2RvdG5ldC1ydW50aW1lLTMuMS4zMi13aW4teDY0LmV4ZSIKJGRvdE5ldENvcmVJbnN0YWxsZXJEaXIgPSAiJGVudjpURU1QXGRvdG5ldC1pbnN0YWxsZXIiCiRkb3ROZXRDb3JlSW5zdGFsbGVyRmlsZSA9ICIkZG90TmV0Q29yZUluc3RhbGxlckRpclxkb3RuZXQtcnVudGltZS0zLjEuMzItd2luLXg2NC5leGUiCk5ldy1JdGVtIC1JdGVtVHlwZSBEaXJlY3RvcnkgLVBhdGggJGRvdE5ldENvcmVJbnN0YWxsZXJEaXIKSW52b2tlLVdlYlJlcXVlc3QgLVVyaSAkZG90TmV0Q29yZUluc3RhbGxlclVyaSAtT3V0RmlsZSAkZG90TmV0Q29yZUluc3RhbGxlckZpbGUKU3RhcnQtUHJvY2VzcyAtRmlsZVBhdGggJGRvdE5ldENvcmVJbnN0YWxsZXJGaWxlIC1BcmdzICIvaW5zdGFsbCAvcXVpZXQgL25vcmVzdGFydCIgLVdhaXQKCiMgQVdTIFRvb2xzIGZvciBQb3dlclNoZWxsIOyEpOy5mApJbnN0YWxsLU1vZHVsZSAtTmFtZSBBV1NQb3dlclNoZWxsLk5ldENvcmUgLUZvcmNlCgojIFBvd2VyU2hlbGwg7Iuk7ZaJIOygleyxhSDshKTsoJUKU2V0LUV4ZWN1dGlvblBvbGljeSBSZW1vdGVTaWduZWQKPC9wb3dlcnNoZWxsPg=="
+      BlockDeviceMappings:
+      - Ebs:
+          SnapshotId: "snap-00b91f7348b306d4e"
+          VolumeType: "gp3"
+          Iops: 3000
+          VolumeSize: 30
+          Encrypted: false
+          DeleteOnTermination: true
+        DeviceName: "/dev/sda1"
+      IamInstanceProfile:
+        Ref: "IAMInstanceProfile00MyTestRoleForEC200cHcYB"
+      SubnetId:
+        Ref: "EC2Subnet00subnet00c22ce20b776db4e00lChAd"
+      EbsOptimized: true
+      Volumes:
+      - VolumeId: "vol-026f05924114e5b69"
+        Device: "/dev/sda1"
+      NetworkInterfaces:
+      - PrivateIpAddresses:
+        - PrivateIpAddress: "172.31.11.130"
+          Primary: true
+        SecondaryPrivateIpAddressCount: 0
+        DeviceIndex: "0"
+        GroupSet:
+        - Ref: "EC2SecurityGroup00sg0d86ccc66a13f5b4600Ea2tP"
+        - Ref: "EC2SecurityGroup00sg05445c3fa1244f34d00z1iSZ"
+        - Ref: "EC2SecurityGroup00sg0829dab2b088ac6db00KmFNy"
+        - Ref: "EC2SecurityGroup00sg0843cfa0b3da7f38e00MS2X4"
+        Ipv6Addresses: []
+        SubnetId:
+          Ref: "EC2Subnet00subnet00c22ce20b776db4e00lChAd"
+        AssociatePublicIpAddress: false
+        NetworkInterfaceId:
+          Ref: "EC2NetworkInterface00eni00cca41c754a6ac8e00JlOzH"
+        DeleteOnTermination: true
+      ImageId: "ami-07427619b8e8c799b"
+      InstanceType: "c6in.4xlarge"
+      Monitoring: false
+      Tags:
+      - Value: "Test-Middle #5"
+        Key: "Name"
+      InstanceInitiatedShutdownBehavior: "stop"
+      CpuOptions:
+        ThreadsPerCore: 2
+        CoreCount: 8
+      AvailabilityZone: "ap-northeast-2a"
+      PrivateDnsNameOptions:
+        EnableResourceNameDnsARecord: true
+        HostnameType: "ip-name"
+        EnableResourceNameDnsAAAARecord: false
+      SecurityGroupIds:
+      - "sg-0d86ccc66a13f5b46"
+      - "sg-05445c3fa1244f34d"
+      - "sg-0829dab2b088ac6db"
+      - "sg-0843cfa0b3da7f38e"
+      DisableApiTermination: false
+      KeyName: "EC2 Tutorial"
+      SourceDestCheck: true
+      PlacementGroupName: ""
+      VpcId: "vpc-0ba2471045a96a398"
+      State:
+        Code: "80"
+        Name: "stopped"
+      CreditSpecification:
+        CPUCredits: "standard"
+  EC2NetworkInterface00eni082055fa8c27ebded00NDR4V:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::EC2::NetworkInterface"
+    DeletionPolicy: "Delete"
+    Properties:
+      Description: ""
+      PrivateIpAddress: "172.31.9.179"
+      PrivateIpAddresses:
+      - PrivateIpAddress: "172.31.9.179"
+        Primary: true
+      SecondaryPrivateIpAddressCount: 0
+      Ipv6PrefixCount: 0
+      Ipv4Prefixes: []
+      Ipv4PrefixCount: 0
+      GroupSet:
+      - "sg-0d86ccc66a13f5b46"
+      - "sg-05445c3fa1244f34d"
+      - "sg-0829dab2b088ac6db"
+      - "sg-0843cfa0b3da7f38e"
+      Ipv6Prefixes: []
+      SubnetId:
+        Ref: "EC2Subnet00subnet00c22ce20b776db4e00lChAd"
+      SourceDestCheck: true
+      InterfaceType: "interface"
+      Tags: []
+  EC2Instance00i0c17de5f318ea093f00lHelK:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::EC2::Instance"
+    DeletionPolicy: "Delete"
+    Properties:
+      Tenancy: "default"
+      SecurityGroups:
+      - "launch-wizard-5"
+      - "ec2-rds-2"
+      PrivateIpAddress: "172.31.8.243"
+      UserData: "PHBvd2Vyc2hlbGw+CiMgLk5FVCBDb3JlIFJ1bnRpbWUg7ISk7LmYCiRkb3ROZXRDb3JlSW5zdGFsbGVyVXJpID0gImh0dHBzOi8vZG90bmV0d2VicmVsZWFzZXN0b3JhZ2UuYmxvYi5jb3JlLndpbmRvd3MubmV0L3J1bnRpbWUvMy4xLjMyL2RvdG5ldC1ydW50aW1lLTMuMS4zMi13aW4teDY0LmV4ZSIKJGRvdE5ldENvcmVJbnN0YWxsZXJEaXIgPSAiJGVudjpURU1QXGRvdG5ldC1pbnN0YWxsZXIiCiRkb3ROZXRDb3JlSW5zdGFsbGVyRmlsZSA9ICIkZG90TmV0Q29yZUluc3RhbGxlckRpclxkb3RuZXQtcnVudGltZS0zLjEuMzItd2luLXg2NC5leGUiCk5ldy1JdGVtIC1JdGVtVHlwZSBEaXJlY3RvcnkgLVBhdGggJGRvdE5ldENvcmVJbnN0YWxsZXJEaXIKSW52b2tlLVdlYlJlcXVlc3QgLVVyaSAkZG90TmV0Q29yZUluc3RhbGxlclVyaSAtT3V0RmlsZSAkZG90TmV0Q29yZUluc3RhbGxlckZpbGUKU3RhcnQtUHJvY2VzcyAtRmlsZVBhdGggJGRvdE5ldENvcmVJbnN0YWxsZXJGaWxlIC1BcmdzICIvaW5zdGFsbCAvcXVpZXQgL25vcmVzdGFydCIgLVdhaXQKCiMgQVdTIFRvb2xzIGZvciBQb3dlclNoZWxsIOyEpOy5mApJbnN0YWxsLU1vZHVsZSAtTmFtZSBBV1NQb3dlclNoZWxsLk5ldENvcmUgLUZvcmNlCgojIFBvd2VyU2hlbGwg7Iuk7ZaJIOygleyxhSDshKTsoJUKU2V0LUV4ZWN1dGlvblBvbGljeSBSZW1vdGVTaWduZWQKCiMgSW5zdGFsbCBBV1MgVG9vbHMKJFByb2dyZXNzUHJlZmVyZW5jZSA9ICdTaWxlbnRseUNvbnRpbnVlJwpta2RpciBDOlxQcm9ncmFtRGF0YVxBbWF6b25cQW1hem9uQVdTQWdlbnRzIC1Gb3JjZQpJbnZva2UtV2ViUmVxdWVzdCAtVXJpIGh0dHBzOi8vczMuYW1hem9uYXdzLmNvbS9lYzItZG93bmxvYWRzLXdpbmRvd3MvQW1hem9uQVdTQWdlbnRzLnppcCAtT3V0RmlsZSBDOlxQcm9ncmFtRGF0YVxBbWF6b25cQW1hem9uQVdTQWdlbnRzXEFtYXpvbkFXU0FnZW50cy56aXAKRXhwYW5kLUFyY2hpdmUgLVBhdGggQzpcUHJvZ3JhbURhdGFcQW1hem9uXEFtYXpvbkFXU0FnZW50c1xBbWF6b25BV1NBZ2VudHMuemlwIC1EZXN0aW5hdGlvblBhdGggQzpcUHJvZ3JhbURhdGFcQW1hem9uXEFtYXpvbkFXU0FnZW50cyAtRm9yY2UKJGVudjpQYXRoICs9ICI7QzpcUHJvZ3JhbURhdGFcQW1hem9uXEFtYXpvbkFXU0FnZW50cyIKCiMgSW5zdGFsbCBTU00gQWdlbnQKU3RhcnQtUHJvY2VzcyAtRmlsZVBhdGggQzpcUHJvZ3JhbURhdGFcQW1hem9uXEFtYXpvbkFXU0FnZW50c1xBbWF6b25TU01BZ2VudC5leGUgLUFyZ3VtZW50TGlzdCAiL0luc3RhbGwgL1F1aWV0IiAtV2FpdAoKIyBDb25maWd1cmUgQ2xvdWRXYXRjaCBBZ2VudAokY3dBZ2VudENvbmZpZyA9IEAiCnsKICAibG9ncyI6IHsKICAgICJsb2dzX2NvbGxlY3RlZCI6IHsKICAgICAgImZpbGVzIjogewogICAgICAgICJjb2xsZWN0X2xpc3QiOiBbCiAgICAgICAgICB7CiAgICAgICAgICAgICJmaWxlX3BhdGgiOiAiQzpcXHRlc3RjbGllbnRcXGF1cm9yYVxcbG9nLnR4dCIsCiAgICAgICAgICAgICJsb2dfZ3JvdXBfbmFtZSI6ICJhdXJvcmEtdGVzdC1ncm91cCIsCiAgICAgICAgICAgICJsb2dfc3RyZWFtX25hbWUiOiAie2luc3RhbmNlX2lkfSIKICAgICAgICAgIH0sCiAgICAgICAgICB7CiAgICAgICAgICAgICJmaWxlX3BhdGgiOiAiQzpcXHRlc3RjbGllbnRcXG1zc3FsXFxsb2cudHh0IiwKICAgICAgICAgICAgImxvZ19ncm91cF9uYW1lIjogIm1zc3FsLXRlc3QtZ3JvdXAiLAogICAgICAgICAgICAibG9nX3N0cmVhbV9uYW1lIjogIntpbnN0YW5jZV9pZH0iCiAgICAgICAgICB9CiAgICAgICAgXQogICAgICB9CiAgICB9CiAgfQp9CiJACgokY3dBZ2VudENvbmZpZyB8IE91dC1GaWxlIC1GaWxlUGF0aCBDOlxQcm9ncmFtRGF0YVxBbWF6b25cQW1hem9uQVdTQWdlbnRzXGNvbmZpZy5qc29uIC1FbmNvZGluZyBBU0NJSSAtRm9yY2UKCiMgSW5zdGFsbCBDbG91ZFdhdGNoIEFnZW50ClN0YXJ0LVByb2Nlc3MgLUZpbGVQYXRoIEM6XFByb2dyYW1EYXRhXEFtYXpvblxBbWF6b25BV1NBZ2VudHNcQW1hem9uQ2xvdWRXYXRjaEFnZW50LmV4ZSAtQXJndW1lbnRMaXN0ICIvSW5zdGFsbCAvUXVpZXQiIC1XYWl0CgojIFN0YXJ0IENsb3VkV2F0Y2ggQWdlbnQKU3RhcnQtU2VydmljZSAtTmFtZSBBbWF6b25DbG91ZFdhdGNoQWdlbnQKPC9wb3dlcnNoZWxsPg=="
+      BlockDeviceMappings:
+      - Ebs:
+          SnapshotId: "snap-0b316d2290e49bcdb"
+          VolumeType: "gp3"
+          Iops: 3000
+          VolumeSize: 50
+          Encrypted: false
+          DeleteOnTermination: true
+        DeviceName: "/dev/sda1"
+      IamInstanceProfile:
+        Ref: "IAMInstanceProfile00MyTestRoleForEC200cHcYB"
+      SubnetId:
+        Ref: "EC2Subnet00subnet00c22ce20b776db4e00lChAd"
+      EbsOptimized: true
+      Volumes:
+      - VolumeId: "vol-021447189d8524543"
+        Device: "/dev/sda1"
+      NetworkInterfaces:
+      - PrivateIpAddresses:
+        - PrivateIpAddress: "172.31.8.243"
+          Primary: true
+        SecondaryPrivateIpAddressCount: 0
+        DeviceIndex: "0"
+        GroupSet:
+        - Ref: "EC2SecurityGroup00sg0d86ccc66a13f5b4600Ea2tP"
+        - Ref: "EC2SecurityGroup00sg0829dab2b088ac6db00KmFNy"
+        Ipv6Addresses: []
+        SubnetId:
+          Ref: "EC2Subnet00subnet00c22ce20b776db4e00lChAd"
+        AssociatePublicIpAddress: false
+        NetworkInterfaceId:
+          Ref: "EC2NetworkInterface00eni0fa21ca1b7d8f7abc00jmXiw"
+        DeleteOnTermination: true
+      ImageId: "ami-0d159154c576c21c3"
+      InstanceType: "c6in.4xlarge"
+      Monitoring: false
+      Tags:
+      - Value: "Test-Middle #12"
+        Key: "Name"
+      InstanceInitiatedShutdownBehavior: "stop"
+      CpuOptions:
+        ThreadsPerCore: 2
+        CoreCount: 8
+      AvailabilityZone: "ap-northeast-2a"
+      PrivateDnsNameOptions:
+        EnableResourceNameDnsARecord: true
+        HostnameType: "ip-name"
+        EnableResourceNameDnsAAAARecord: false
+      SecurityGroupIds:
+      - "sg-0d86ccc66a13f5b46"
+      - "sg-0829dab2b088ac6db"
+      DisableApiTermination: false
+      KeyName: "EC2 Tutorial"
+      SourceDestCheck: true
+      PlacementGroupName: ""
+      VpcId: "vpc-0ba2471045a96a398"
+      State:
+        Code: "80"
+        Name: "stopped"
+      CreditSpecification:
+        CPUCredits: "standard"
+  EC2Subnet00subnet0c69787755bcf4f1e00iN7jN:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::EC2::Subnet"
+    DeletionPolicy: "Delete"
+    Properties:
+      VpcId:
+        Ref: "EC2VPC00vpc0ba2471045a96a398003Ek3v"
+      MapPublicIpOnLaunch: false
+      EnableDns64: false
+      AvailabilityZoneId: "apne2-az1"
+      PrivateDnsNameOptionsOnLaunch:
+        EnableResourceNameDnsARecord: false
+        HostnameType: "ip-name"
+        EnableResourceNameDnsAAAARecord: false
+      CidrBlock: "172.31.64.0/25"
+      Ipv6Native: false
+      Tags:
+      - Value: "Subnet for RDS"
+        Key: "MockupTestType"
+      - Value: "RDS-Pvt-subnet-1"
+        Key: "Name"
+  LambdaFunction00mockupservertestprerequisites00ioC8D:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::Lambda::Function"
+    DeletionPolicy: "Delete"
+    Properties:
+      MemorySize: 512
+      Description: ""
+      TracingConfig:
+        Mode: "PassThrough"
+      VpcConfig:
+        SecurityGroupIds:
+        - "sg-04505be9b0d809b02"
+        - "sg-063e80756ad64eea0"
+        SubnetIds:
+        - Ref: "EC2Subnet00subnet0c69787755bcf4f1e00iN7jN"
+        - Ref: "EC2Subnet00subnet00a347506ef4d8c1b00Z8Ptt"
+        - Ref: "EC2Subnet00subnet092d82a1a4c37a1e4004Egsn"
+        Ipv6AllowedForDualStack: false
+      Timeout: 900
+      RuntimeManagementConfig:
+        UpdateRuntimeOn: "Auto"
+      Handler: "mockupserver-prerequisites::mockupserver_prerequisites.Function::FunctionHandler"
+      Code:
+        SourceKMSKeyArn:
+          Ref: "LambdaFunction00mockupservertestprerequisites00ioC8DCodeSourceKMSKeyArnoKqWj"
+        S3ObjectVersion:
+          Ref: "LambdaFunction00mockupservertestprerequisites00ioC8DCodeS3ObjectVersionMzG6Q"
+        S3Bucket:
+          Ref: "LambdaFunction00mockupservertestprerequisites00ioC8DCodeS3BucketjXKKm"
+        ZipFile:
+          Ref: "LambdaFunction00mockupservertestprerequisites00ioC8DCodeZipFile6a610"
+        ImageUri:
+          Ref: "LambdaFunction00mockupservertestprerequisites00ioC8DCodeImageUri1rZDS"
+        S3Key:
+          Ref: "LambdaFunction00mockupservertestprerequisites00ioC8DCodeS3KeyQqhA0"
+      Role: "arn:aws:iam::965037532757:role/service-role/mockupserver-test-role-38j5jrk0"
+      FileSystemConfigs: []
+      FunctionName: "mockupserver-test-prerequisites"
+      Runtime: "dotnet8"
+      PackageType: "Zip"
+      LoggingConfig:
+        LogFormat: "Text"
+        LogGroup: "/aws/lambda/mockupserver-test-prerequisites"
+      RecursiveLoop: "Terminate"
+      EphemeralStorage:
+        Size: 512
+      Tags:
+      - Value: "Lambda Function"
+        Key: "MockupTestType"
+      Architectures:
+      - "arm64"
+  EC2Instance00i0f2b3777da392f4b500hEIlK:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::EC2::Instance"
+    DeletionPolicy: "Delete"
+    Properties:
+      Tenancy: "default"
+      SecurityGroups:
+      - "launch-wizard-5"
+      - "ec2-rds-2"
+      PrivateIpAddress: "172.31.5.78"
+      UserData: "PHBvd2Vyc2hlbGw+CiMgLk5FVCBDb3JlIFJ1bnRpbWUg7ISk7LmYCiRkb3ROZXRDb3JlSW5zdGFsbGVyVXJpID0gImh0dHBzOi8vZG90bmV0d2VicmVsZWFzZXN0b3JhZ2UuYmxvYi5jb3JlLndpbmRvd3MubmV0L3J1bnRpbWUvMy4xLjMyL2RvdG5ldC1ydW50aW1lLTMuMS4zMi13aW4teDY0LmV4ZSIKJGRvdE5ldENvcmVJbnN0YWxsZXJEaXIgPSAiJGVudjpURU1QXGRvdG5ldC1pbnN0YWxsZXIiCiRkb3ROZXRDb3JlSW5zdGFsbGVyRmlsZSA9ICIkZG90TmV0Q29yZUluc3RhbGxlckRpclxkb3RuZXQtcnVudGltZS0zLjEuMzItd2luLXg2NC5leGUiCk5ldy1JdGVtIC1JdGVtVHlwZSBEaXJlY3RvcnkgLVBhdGggJGRvdE5ldENvcmVJbnN0YWxsZXJEaXIKSW52b2tlLVdlYlJlcXVlc3QgLVVyaSAkZG90TmV0Q29yZUluc3RhbGxlclVyaSAtT3V0RmlsZSAkZG90TmV0Q29yZUluc3RhbGxlckZpbGUKU3RhcnQtUHJvY2VzcyAtRmlsZVBhdGggJGRvdE5ldENvcmVJbnN0YWxsZXJGaWxlIC1BcmdzICIvaW5zdGFsbCAvcXVpZXQgL25vcmVzdGFydCIgLVdhaXQKCiMgQVdTIFRvb2xzIGZvciBQb3dlclNoZWxsIOyEpOy5mApJbnN0YWxsLU1vZHVsZSAtTmFtZSBBV1NQb3dlclNoZWxsLk5ldENvcmUgLUZvcmNlCgojIFBvd2VyU2hlbGwg7Iuk7ZaJIOygleyxhSDshKTsoJUKU2V0LUV4ZWN1dGlvblBvbGljeSBSZW1vdGVTaWduZWQKCiMgSW5zdGFsbCBBV1MgVG9vbHMKJFByb2dyZXNzUHJlZmVyZW5jZSA9ICdTaWxlbnRseUNvbnRpbnVlJwpta2RpciBDOlxQcm9ncmFtRGF0YVxBbWF6b25cQW1hem9uQVdTQWdlbnRzIC1Gb3JjZQpJbnZva2UtV2ViUmVxdWVzdCAtVXJpIGh0dHBzOi8vczMuYW1hem9uYXdzLmNvbS9lYzItZG93bmxvYWRzLXdpbmRvd3MvQW1hem9uQVdTQWdlbnRzLnppcCAtT3V0RmlsZSBDOlxQcm9ncmFtRGF0YVxBbWF6b25cQW1hem9uQVdTQWdlbnRzXEFtYXpvbkFXU0FnZW50cy56aXAKRXhwYW5kLUFyY2hpdmUgLVBhdGggQzpcUHJvZ3JhbURhdGFcQW1hem9uXEFtYXpvbkFXU0FnZW50c1xBbWF6b25BV1NBZ2VudHMuemlwIC1EZXN0aW5hdGlvblBhdGggQzpcUHJvZ3JhbURhdGFcQW1hem9uXEFtYXpvbkFXU0FnZW50cyAtRm9yY2UKJGVudjpQYXRoICs9ICI7QzpcUHJvZ3JhbURhdGFcQW1hem9uXEFtYXpvbkFXU0FnZW50cyIKCiMgSW5zdGFsbCBTU00gQWdlbnQKU3RhcnQtUHJvY2VzcyAtRmlsZVBhdGggQzpcUHJvZ3JhbURhdGFcQW1hem9uXEFtYXpvbkFXU0FnZW50c1xBbWF6b25TU01BZ2VudC5leGUgLUFyZ3VtZW50TGlzdCAiL0luc3RhbGwgL1F1aWV0IiAtV2FpdAoKIyBDb25maWd1cmUgQ2xvdWRXYXRjaCBBZ2VudAokY3dBZ2VudENvbmZpZyA9IEAiCnsKICAibG9ncyI6IHsKICAgICJsb2dzX2NvbGxlY3RlZCI6IHsKICAgICAgImZpbGVzIjogewogICAgICAgICJjb2xsZWN0X2xpc3QiOiBbCiAgICAgICAgICB7CiAgICAgICAgICAgICJmaWxlX3BhdGgiOiAiQzpcXHRlc3RjbGllbnRcXGF1cm9yYVxcbG9nLnR4dCIsCiAgICAgICAgICAgICJsb2dfZ3JvdXBfbmFtZSI6ICJhdXJvcmEtdGVzdC1ncm91cCIsCiAgICAgICAgICAgICJsb2dfc3RyZWFtX25hbWUiOiAie2luc3RhbmNlX2lkfSIKICAgICAgICAgIH0sCiAgICAgICAgICB7CiAgICAgICAgICAgICJmaWxlX3BhdGgiOiAiQzpcXHRlc3RjbGllbnRcXG1zc3FsXFxsb2cudHh0IiwKICAgICAgICAgICAgImxvZ19ncm91cF9uYW1lIjogIm1zc3FsLXRlc3QtZ3JvdXAiLAogICAgICAgICAgICAibG9nX3N0cmVhbV9uYW1lIjogIntpbnN0YW5jZV9pZH0iCiAgICAgICAgICB9CiAgICAgICAgXQogICAgICB9CiAgICB9CiAgfQp9CiJACgokY3dBZ2VudENvbmZpZyB8IE91dC1GaWxlIC1GaWxlUGF0aCBDOlxQcm9ncmFtRGF0YVxBbWF6b25cQW1hem9uQVdTQWdlbnRzXGNvbmZpZy5qc29uIC1FbmNvZGluZyBBU0NJSSAtRm9yY2UKCiMgSW5zdGFsbCBDbG91ZFdhdGNoIEFnZW50ClN0YXJ0LVByb2Nlc3MgLUZpbGVQYXRoIEM6XFByb2dyYW1EYXRhXEFtYXpvblxBbWF6b25BV1NBZ2VudHNcQW1hem9uQ2xvdWRXYXRjaEFnZW50LmV4ZSAtQXJndW1lbnRMaXN0ICIvSW5zdGFsbCAvUXVpZXQiIC1XYWl0CgojIFN0YXJ0IENsb3VkV2F0Y2ggQWdlbnQKU3RhcnQtU2VydmljZSAtTmFtZSBBbWF6b25DbG91ZFdhdGNoQWdlbnQKPC9wb3dlcnNoZWxsPg=="
+      BlockDeviceMappings:
+      - Ebs:
+          SnapshotId: "snap-0b316d2290e49bcdb"
+          VolumeType: "gp3"
+          Iops: 3000
+          VolumeSize: 30
+          Encrypted: false
+          DeleteOnTermination: true
+        DeviceName: "/dev/sda1"
+      IamInstanceProfile:
+        Ref: "IAMInstanceProfile00MyTestRoleForEC200cHcYB"
+      SubnetId:
+        Ref: "EC2Subnet00subnet00c22ce20b776db4e00lChAd"
+      EbsOptimized: true
+      Volumes:
+      - VolumeId: "vol-0a892620869605654"
+        Device: "/dev/sda1"
+      NetworkInterfaces:
+      - PrivateIpAddresses:
+        - PrivateIpAddress: "172.31.5.78"
+          Primary: true
+        SecondaryPrivateIpAddressCount: 0
+        DeviceIndex: "0"
+        GroupSet:
+        - Ref: "EC2SecurityGroup00sg0d86ccc66a13f5b4600Ea2tP"
+        - Ref: "EC2SecurityGroup00sg0829dab2b088ac6db00KmFNy"
+        Ipv6Addresses: []
+        SubnetId:
+          Ref: "EC2Subnet00subnet00c22ce20b776db4e00lChAd"
+        AssociatePublicIpAddress: false
+        NetworkInterfaceId:
+          Ref: "EC2NetworkInterface00eni04383c9f001a5092500UjKaI"
+        DeleteOnTermination: true
+      ImageId: "ami-0d159154c576c21c3"
+      InstanceType: "c6in.4xlarge"
+      Monitoring: false
+      Tags:
+      - Value: "Test-Middle #15"
+        Key: "Name"
+      InstanceInitiatedShutdownBehavior: "stop"
+      CpuOptions:
+        ThreadsPerCore: 2
+        CoreCount: 8
+      AvailabilityZone: "ap-northeast-2a"
+      PrivateDnsNameOptions:
+        EnableResourceNameDnsARecord: true
+        HostnameType: "ip-name"
+        EnableResourceNameDnsAAAARecord: false
+      SecurityGroupIds:
+      - "sg-0d86ccc66a13f5b46"
+      - "sg-0829dab2b088ac6db"
+      DisableApiTermination: false
+      KeyName: "EC2 Tutorial"
+      SourceDestCheck: true
+      PlacementGroupName: ""
+      VpcId: "vpc-0ba2471045a96a398"
+      State:
+        Code: "80"
+        Name: "stopped"
+      CreditSpecification:
+        CPUCredits: "standard"
+  EC2NetworkAcl00acl09b97f26fc1bbaeac00oDCVL:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::EC2::NetworkAcl"
+    DeletionPolicy: "Delete"
+    Properties:
+      VpcId:
+        Ref: "EC2VPC00vpc0ba2471045a96a398003Ek3v"
+      Tags:
+      - Value: "ACL"
+        Key: "MockupTestType"
+  EC2VolumeAttachment00vol0fd0dcf43caa26f8500QwUIl:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::EC2::VolumeAttachment"
+    DeletionPolicy: "Delete"
+    Properties:
+      InstanceId: "i-088143945fa27418f"
+      VolumeId: "vol-0fd0dcf43caa26f85"
+      Device: "/dev/sda1"
+  EC2Instance00i09b36d5fdf854864700Ok1WA:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::EC2::Instance"
+    DeletionPolicy: "Delete"
+    Properties:
+      Tenancy: "default"
+      SecurityGroups:
+      - "launch-wizard-5"
+      - "ec2-rds-5"
+      - "ec2-rds-3"
+      - "ec2-rds-2"
+      - "ec2-rds-4"
+      PrivateIpAddress: "172.31.0.76"
+      UserData: "PHBvd2Vyc2hlbGw+CiMgLk5FVCBDb3JlIFJ1bnRpbWUg7ISk7LmYCiRkb3ROZXRDb3JlSW5zdGFsbGVyVXJpID0gImh0dHBzOi8vZG90bmV0d2VicmVsZWFzZXN0b3JhZ2UuYmxvYi5jb3JlLndpbmRvd3MubmV0L3J1bnRpbWUvMy4xLjMyL2RvdG5ldC1ydW50aW1lLTMuMS4zMi13aW4teDY0LmV4ZSIKJGRvdE5ldENvcmVJbnN0YWxsZXJEaXIgPSAiJGVudjpURU1QXGRvdG5ldC1pbnN0YWxsZXIiCiRkb3ROZXRDb3JlSW5zdGFsbGVyRmlsZSA9ICIkZG90TmV0Q29yZUluc3RhbGxlckRpclxkb3RuZXQtcnVudGltZS0zLjEuMzItd2luLXg2NC5leGUiCk5ldy1JdGVtIC1JdGVtVHlwZSBEaXJlY3RvcnkgLVBhdGggJGRvdE5ldENvcmVJbnN0YWxsZXJEaXIKSW52b2tlLVdlYlJlcXVlc3QgLVVyaSAkZG90TmV0Q29yZUluc3RhbGxlclVyaSAtT3V0RmlsZSAkZG90TmV0Q29yZUluc3RhbGxlckZpbGUKU3RhcnQtUHJvY2VzcyAtRmlsZVBhdGggJGRvdE5ldENvcmVJbnN0YWxsZXJGaWxlIC1BcmdzICIvaW5zdGFsbCAvcXVpZXQgL25vcmVzdGFydCIgLVdhaXQKCiMgQVdTIFRvb2xzIGZvciBQb3dlclNoZWxsIOyEpOy5mApJbnN0YWxsLU1vZHVsZSAtTmFtZSBBV1NQb3dlclNoZWxsLk5ldENvcmUgLUZvcmNlCgojIFBvd2VyU2hlbGwg7Iuk7ZaJIOygleyxhSDshKTsoJUKU2V0LUV4ZWN1dGlvblBvbGljeSBSZW1vdGVTaWduZWQKPC9wb3dlcnNoZWxsPg=="
+      BlockDeviceMappings:
+      - Ebs:
+          SnapshotId: "snap-00b91f7348b306d4e"
+          VolumeType: "gp3"
+          Iops: 3000
+          VolumeSize: 30
+          Encrypted: false
+          DeleteOnTermination: true
+        DeviceName: "/dev/sda1"
+      IamInstanceProfile:
+        Ref: "IAMInstanceProfile00MyTestRoleForEC200cHcYB"
+      SubnetId:
+        Ref: "EC2Subnet00subnet00c22ce20b776db4e00lChAd"
+      EbsOptimized: true
+      Volumes:
+      - VolumeId: "vol-03d4a5a8c59079e0b"
+        Device: "/dev/sda1"
+      NetworkInterfaces:
+      - PrivateIpAddresses:
+        - PrivateIpAddress: "172.31.0.76"
+          Primary: true
+        SecondaryPrivateIpAddressCount: 0
+        DeviceIndex: "0"
+        GroupSet:
+        - Ref: "EC2SecurityGroup00sg0d86ccc66a13f5b4600Ea2tP"
+        - Ref: "EC2SecurityGroup00sg05df547596e1a9a2300Gq0Fg"
+        - Ref: "EC2SecurityGroup00sg05445c3fa1244f34d00z1iSZ"
+        - Ref: "EC2SecurityGroup00sg0829dab2b088ac6db00KmFNy"
+        - Ref: "EC2SecurityGroup00sg0843cfa0b3da7f38e00MS2X4"
+        Ipv6Addresses: []
+        SubnetId:
+          Ref: "EC2Subnet00subnet00c22ce20b776db4e00lChAd"
+        AssociatePublicIpAddress: false
+        NetworkInterfaceId:
+          Ref: "EC2NetworkInterface00eni096d60480395ccf8d00d6rfE"
+        DeleteOnTermination: true
+      ImageId: "ami-07427619b8e8c799b"
+      InstanceType: "c6in.4xlarge"
+      Monitoring: true
+      Tags:
+      - Value: "Test-Middle #1"
+        Key: "Name"
+      - Value: "EC2"
+        Key: "MockupTestType"
+      InstanceInitiatedShutdownBehavior: "stop"
+      CpuOptions:
+        ThreadsPerCore: 2
+        CoreCount: 8
+      AvailabilityZone: "ap-northeast-2a"
+      PrivateDnsNameOptions:
+        EnableResourceNameDnsARecord: true
+        HostnameType: "ip-name"
+        EnableResourceNameDnsAAAARecord: false
+      SecurityGroupIds:
+      - "sg-0d86ccc66a13f5b46"
+      - "sg-05df547596e1a9a23"
+      - "sg-05445c3fa1244f34d"
+      - "sg-0829dab2b088ac6db"
+      - "sg-0843cfa0b3da7f38e"
+      DisableApiTermination: false
+      KeyName: "EC2 Tutorial"
+      SourceDestCheck: true
+      PlacementGroupName: ""
+      VpcId: "vpc-0ba2471045a96a398"
+      State:
+        Code: "80"
+        Name: "stopped"
+      CreditSpecification:
+        CPUCredits: "standard"
+  EC2Instance00i088143945fa27418f00VC3QN:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::EC2::Instance"
+    DeletionPolicy: "Delete"
+    Properties:
+      Tenancy: "default"
+      SecurityGroups:
+      - "launch-wizard-5"
+      - "ec2-rds-1"
+      - "ec2-rds-3"
+      - "ec2-rds-2"
+      - "ec2-rds-4"
+      PrivateIpAddress: "172.31.10.99"
+      BlockDeviceMappings:
+      - Ebs:
+          SnapshotId: "snap-0bde65eebe7cb79b2"
+          VolumeType: "gp2"
+          Iops: 100
+          VolumeSize: 30
+          Encrypted: false
+          DeleteOnTermination: true
+        DeviceName: "/dev/sda1"
+      IamInstanceProfile:
+        Ref: "IAMInstanceProfile00MyTestRoleForEC200cHcYB"
+      SubnetId:
+        Ref: "EC2Subnet00subnet00c22ce20b776db4e00lChAd"
+      EbsOptimized: true
+      Volumes:
+      - VolumeId: "vol-0fd0dcf43caa26f85"
+        Device: "/dev/sda1"
+      NetworkInterfaces:
+      - PrivateIpAddresses:
+        - PrivateIpAddress: "172.31.10.99"
+          Primary: true
+        SecondaryPrivateIpAddressCount: 0
+        DeviceIndex: "0"
+        GroupSet:
+        - Ref: "EC2SecurityGroup00sg0d86ccc66a13f5b4600Ea2tP"
+        - Ref: "EC2SecurityGroup00sg05f859e0a8fc698dc00HFuyG"
+        - Ref: "EC2SecurityGroup00sg05445c3fa1244f34d00z1iSZ"
+        - Ref: "EC2SecurityGroup00sg0829dab2b088ac6db00KmFNy"
+        - Ref: "EC2SecurityGroup00sg0843cfa0b3da7f38e00MS2X4"
+        Ipv6Addresses: []
+        SubnetId:
+          Ref: "EC2Subnet00subnet00c22ce20b776db4e00lChAd"
+        AssociatePublicIpAddress: true
+        NetworkInterfaceId:
+          Ref: "EC2NetworkInterface00eni051edad864f07a9ee00G7J5R"
+        DeleteOnTermination: true
+      ImageId: "ami-0bca3b9f2e6e66b9a"
+      InstanceType: "c6in.4xlarge"
+      Monitoring: false
+      Tags:
+      - Value: "Windows Server for Aurora test #1"
+        Key: "Name"
+      InstanceInitiatedShutdownBehavior: "stop"
+      CpuOptions:
+        ThreadsPerCore: 2
+        CoreCount: 8
+      AvailabilityZone: "ap-northeast-2a"
+      PrivateDnsNameOptions:
+        EnableResourceNameDnsARecord: true
+        HostnameType: "ip-name"
+        EnableResourceNameDnsAAAARecord: false
+      SecurityGroupIds:
+      - "sg-0d86ccc66a13f5b46"
+      - "sg-05f859e0a8fc698dc"
+      - "sg-05445c3fa1244f34d"
+      - "sg-0829dab2b088ac6db"
+      - "sg-0843cfa0b3da7f38e"
+      DisableApiTermination: false
+      KeyName: "EC2 Tutorial"
+      SourceDestCheck: true
+      PlacementGroupName: ""
+      VpcId: "vpc-0ba2471045a96a398"
+      State:
+        Code: "16"
+        Name: "running"
+      CreditSpecification:
+        CPUCredits: "standard"
+  EC2Volume00vol03d4a5a8c59079e0b00gsxNP:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::EC2::Volume"
+    DeletionPolicy: "Delete"
+    Properties:
+      MultiAttachEnabled: false
+      SnapshotId: "snap-00b91f7348b306d4e"
+      VolumeType: "gp3"
+      Encrypted: true
+      Size: 30
+      AutoEnableIO: true
+      AvailabilityZone: "ap-northeast-2a"
+      Throughput: 125
+      Iops: 3000
+      Tags:
+      - Value: "EBS Storage"
+        Key: "MockupTestType"
+  EC2NetworkInterface00eni0fa21ca1b7d8f7abc00jmXiw:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::EC2::NetworkInterface"
+    DeletionPolicy: "Delete"
+    Properties:
+      Description: ""
+      PrivateIpAddress: "172.31.8.243"
+      PrivateIpAddresses:
+      - PrivateIpAddress: "172.31.8.243"
+        Primary: true
+      SecondaryPrivateIpAddressCount: 0
+      Ipv6PrefixCount: 0
+      Ipv4Prefixes: []
+      Ipv4PrefixCount: 0
+      GroupSet:
+      - "sg-0d86ccc66a13f5b46"
+      - "sg-0829dab2b088ac6db"
+      Ipv6Prefixes: []
+      SubnetId:
+        Ref: "EC2Subnet00subnet00c22ce20b776db4e00lChAd"
+      SourceDestCheck: true
+      InterfaceType: "interface"
+      Tags: []
+  EC2InternetGateway00igw049e0afdac2d26c8f00y1o1I:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::EC2::InternetGateway"
+    DeletionPolicy: "Delete"
+    Properties:
+      Tags:
+      - Value: "IGW"
+        Key: "MockupTestType"
+  EC2Subnet00subnet0718424bbc22cbc0200RfHMe:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::EC2::Subnet"
+    DeletionPolicy: "Delete"
+    Properties:
+      VpcId:
+        Ref: "EC2VPC00vpc0ba2471045a96a398003Ek3v"
+      MapPublicIpOnLaunch: true
+      EnableDns64: false
+      AvailabilityZoneId: "apne2-az2"
+      PrivateDnsNameOptionsOnLaunch:
+        EnableResourceNameDnsARecord: false
+        HostnameType: "ip-name"
+        EnableResourceNameDnsAAAARecord: false
+      CidrBlock: "172.31.16.0/20"
+      Ipv6Native: false
+      Tags:
+      - Value: "Subnet"
+        Key: "MockupTestType"
+  EC2Instance00i08f4620aa8627ad6200FE18x:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::EC2::Instance"
+    DeletionPolicy: "Delete"
+    Properties:
+      Tenancy: "default"
+      SecurityGroups:
+      - "launch-wizard-5"
+      - "ec2-rds-3"
+      - "ec2-rds-2"
+      - "ec2-rds-4"
+      PrivateIpAddress: "172.31.9.21"
+      UserData: "PHBvd2Vyc2hlbGw+CiMgLk5FVCBDb3JlIFJ1bnRpbWUg7ISk7LmYCiRkb3ROZXRDb3JlSW5zdGFsbGVyVXJpID0gImh0dHBzOi8vZG90bmV0d2VicmVsZWFzZXN0b3JhZ2UuYmxvYi5jb3JlLndpbmRvd3MubmV0L3J1bnRpbWUvMy4xLjMyL2RvdG5ldC1ydW50aW1lLTMuMS4zMi13aW4teDY0LmV4ZSIKJGRvdE5ldENvcmVJbnN0YWxsZXJEaXIgPSAiJGVudjpURU1QXGRvdG5ldC1pbnN0YWxsZXIiCiRkb3ROZXRDb3JlSW5zdGFsbGVyRmlsZSA9ICIkZG90TmV0Q29yZUluc3RhbGxlckRpclxkb3RuZXQtcnVudGltZS0zLjEuMzItd2luLXg2NC5leGUiCk5ldy1JdGVtIC1JdGVtVHlwZSBEaXJlY3RvcnkgLVBhdGggJGRvdE5ldENvcmVJbnN0YWxsZXJEaXIKSW52b2tlLVdlYlJlcXVlc3QgLVVyaSAkZG90TmV0Q29yZUluc3RhbGxlclVyaSAtT3V0RmlsZSAkZG90TmV0Q29yZUluc3RhbGxlckZpbGUKU3RhcnQtUHJvY2VzcyAtRmlsZVBhdGggJGRvdE5ldENvcmVJbnN0YWxsZXJGaWxlIC1BcmdzICIvaW5zdGFsbCAvcXVpZXQgL25vcmVzdGFydCIgLVdhaXQKCiMgQVdTIFRvb2xzIGZvciBQb3dlclNoZWxsIOyEpOy5mApJbnN0YWxsLU1vZHVsZSAtTmFtZSBBV1NQb3dlclNoZWxsLk5ldENvcmUgLUZvcmNlCgojIFBvd2VyU2hlbGwg7Iuk7ZaJIOygleyxhSDshKTsoJUKU2V0LUV4ZWN1dGlvblBvbGljeSBSZW1vdGVTaWduZWQKPC9wb3dlcnNoZWxsPg=="
+      BlockDeviceMappings:
+      - Ebs:
+          SnapshotId: "snap-00b91f7348b306d4e"
+          VolumeType: "gp3"
+          Iops: 3000
+          VolumeSize: 30
+          Encrypted: false
+          DeleteOnTermination: true
+        DeviceName: "/dev/sda1"
+      IamInstanceProfile:
+        Ref: "IAMInstanceProfile00MyTestRoleForEC200cHcYB"
+      SubnetId:
+        Ref: "EC2Subnet00subnet00c22ce20b776db4e00lChAd"
+      EbsOptimized: true
+      Volumes:
+      - VolumeId: "vol-0172eb8efa4c1c702"
+        Device: "/dev/sda1"
+      NetworkInterfaces:
+      - PrivateIpAddresses:
+        - PrivateIpAddress: "172.31.9.21"
+          Primary: true
+        SecondaryPrivateIpAddressCount: 0
+        DeviceIndex: "0"
+        GroupSet:
+        - Ref: "EC2SecurityGroup00sg0d86ccc66a13f5b4600Ea2tP"
+        - Ref: "EC2SecurityGroup00sg05445c3fa1244f34d00z1iSZ"
+        - Ref: "EC2SecurityGroup00sg0829dab2b088ac6db00KmFNy"
+        - Ref: "EC2SecurityGroup00sg0843cfa0b3da7f38e00MS2X4"
+        Ipv6Addresses: []
+        SubnetId:
+          Ref: "EC2Subnet00subnet00c22ce20b776db4e00lChAd"
+        AssociatePublicIpAddress: false
+        NetworkInterfaceId:
+          Ref: "EC2NetworkInterface00eni084b6d62570aa383e00T0DFO"
+        DeleteOnTermination: true
+      ImageId: "ami-07427619b8e8c799b"
+      InstanceType: "c6in.4xlarge"
+      Monitoring: false
+      Tags:
+      - Value: "Test-Middle #10"
+        Key: "Name"
+      InstanceInitiatedShutdownBehavior: "stop"
+      CpuOptions:
+        ThreadsPerCore: 2
+        CoreCount: 8
+      AvailabilityZone: "ap-northeast-2a"
+      PrivateDnsNameOptions:
+        EnableResourceNameDnsARecord: true
+        HostnameType: "ip-name"
+        EnableResourceNameDnsAAAARecord: false
+      SecurityGroupIds:
+      - "sg-0d86ccc66a13f5b46"
+      - "sg-05445c3fa1244f34d"
+      - "sg-0829dab2b088ac6db"
+      - "sg-0843cfa0b3da7f38e"
+      DisableApiTermination: false
+      KeyName: "EC2 Tutorial"
+      SourceDestCheck: true
+      PlacementGroupName: ""
+      VpcId: "vpc-0ba2471045a96a398"
+      State:
+        Code: "80"
+        Name: "stopped"
+      CreditSpecification:
+        CPUCredits: "standard"
+  RDSDBCluster00aurora00FDTfh:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::RDS::DBCluster"
+    DeletionPolicy: "Delete"
+    Properties:
+      StorageEncrypted: true
+      AssociatedRoles:
+      - RoleArn: "arn:aws:iam::965037532757:role/aws-service-role/rds.amazonaws.com/AWSServiceRoleForRDS"
+      EnableHttpEndpoint: false
+      EngineMode: "provisioned"
+      Port: 3306
+      DBClusterIdentifier: "aurora"
+      PreferredBackupWindow: "18:27-18:57"
+      NetworkType: "IPV4"
+      VpcSecurityGroupIds:
+      - "sg-036acef45f00197de"
+      - "sg-0284d2fe9a2b1e1da"
+      CopyTagsToSnapshot: true
+      Engine: "aurora-mysql"
+      Tags:
+      - Value: "DB Cluster"
+        Key: "MockupTestType"
+      - Value: "Aurora"
+        Key: "MockupKey"
+      - Value: "MockupServer"
+        Key: "TestType"
+      EngineLifecycleSupport: "open-source-rds-extended-support"
+      EngineVersion: "8.0.mysql_aurora.3.04.1"
+      StorageType: "aurora-iopt1"
+      KmsKeyId: "arn:aws:kms:ap-northeast-2:965037532757:key/133cc9e9-e36f-45d0-9270-2e33015fcd48"
+      AvailabilityZones:
+      - "ap-northeast-2b"
+      - "ap-northeast-2a"
+      - "ap-northeast-2d"
+      DatabaseName: "testdb"
+      EnableLocalWriteForwarding: false
+      PreferredMaintenanceWindow: "thu:16:47-thu:17:17"
+      AutoMinorVersionUpgrade: false
+      DBSubnetGroupName:
+        Ref: "RDSDBSubnetGroup00rdsec2dbsubnetgroup100EOLyj"
+      DeletionProtection: true
+      AllocatedStorage: 1
+      ManageMasterUserPassword: false
+      MasterUserSecret: {}
+      MasterUsername:
+        Ref: DBUserName
+      ReadEndpoint: {}
+      EnableIAMDatabaseAuthentication: false
+      DBClusterParameterGroupName: "aurora-mysql-memory-optimized"
+      BackupRetentionPeriod: 1
+      EnableCloudwatchLogsExports:
+      - "error"
+      - "slowquery"
+  EC2VolumeAttachment00vol0a89262086960565400B8TPL:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::EC2::VolumeAttachment"
+    DeletionPolicy: "Delete"
+    Properties:
+      InstanceId: "i-0f2b3777da392f4b5"
+      VolumeId: "vol-0a892620869605654"
+      Device: "/dev/sda1"
+  EC2Instance00i087e0eb9541f856f900FaKCI:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::EC2::Instance"
+    DeletionPolicy: "Delete"
+    Properties:
+      Tenancy: "default"
+      SecurityGroups:
+      - "launch-wizard-5"
+      - "ec2-rds-3"
+      - "ec2-rds-2"
+      - "ec2-rds-4"
+      PrivateIpAddress: "172.31.2.110"
+      UserData: "PHBvd2Vyc2hlbGw+CiMgLk5FVCBDb3JlIFJ1bnRpbWUg7ISk7LmYCiRkb3ROZXRDb3JlSW5zdGFsbGVyVXJpID0gImh0dHBzOi8vZG90bmV0d2VicmVsZWFzZXN0b3JhZ2UuYmxvYi5jb3JlLndpbmRvd3MubmV0L3J1bnRpbWUvMy4xLjMyL2RvdG5ldC1ydW50aW1lLTMuMS4zMi13aW4teDY0LmV4ZSIKJGRvdE5ldENvcmVJbnN0YWxsZXJEaXIgPSAiJGVudjpURU1QXGRvdG5ldC1pbnN0YWxsZXIiCiRkb3ROZXRDb3JlSW5zdGFsbGVyRmlsZSA9ICIkZG90TmV0Q29yZUluc3RhbGxlckRpclxkb3RuZXQtcnVudGltZS0zLjEuMzItd2luLXg2NC5leGUiCk5ldy1JdGVtIC1JdGVtVHlwZSBEaXJlY3RvcnkgLVBhdGggJGRvdE5ldENvcmVJbnN0YWxsZXJEaXIKSW52b2tlLVdlYlJlcXVlc3QgLVVyaSAkZG90TmV0Q29yZUluc3RhbGxlclVyaSAtT3V0RmlsZSAkZG90TmV0Q29yZUluc3RhbGxlckZpbGUKU3RhcnQtUHJvY2VzcyAtRmlsZVBhdGggJGRvdE5ldENvcmVJbnN0YWxsZXJGaWxlIC1BcmdzICIvaW5zdGFsbCAvcXVpZXQgL25vcmVzdGFydCIgLVdhaXQKCiMgQVdTIFRvb2xzIGZvciBQb3dlclNoZWxsIOyEpOy5mApJbnN0YWxsLU1vZHVsZSAtTmFtZSBBV1NQb3dlclNoZWxsLk5ldENvcmUgLUZvcmNlCgojIFBvd2VyU2hlbGwg7Iuk7ZaJIOygleyxhSDshKTsoJUKU2V0LUV4ZWN1dGlvblBvbGljeSBSZW1vdGVTaWduZWQKCiMgQ2xvdWRXYXRjaCBBZ2VudCDri6TsmrTroZzrk5wg67CPIOyEpOy5mAoKJGFnZW50U291cmNlID0gImh0dHBzOi8vczMuYW1hem9uYXdzLmNvbS9hbWF6b25jbG91ZHdhdGNoLWFnZW50L3dpbmRvd3MvYW1kNjQvbGF0ZXN0L2FtYXpvbi1jbG91ZHdhdGNoLWFnZW50Lm1zaSIKCiRvdXRwdXRQYXRoID0gIiRlbnY6VEVNUFxhbWF6b24tY2xvdWR3YXRjaC1hZ2VudC5tc2kiCgpJbnZva2UtV2ViUmVxdWVzdCAtVXJpICRhZ2VudFNvdXJjZSAtT3V0RmlsZSAkb3V0cHV0UGF0aAoKU3RhcnQtUHJvY2VzcyBtc2lleGVjLmV4ZSAtQXJndW1lbnRMaXN0ICIvaSAkb3V0cHV0UGF0aCAvcW4iIC1XYWl0CgoKIyBDbG91ZFdhdGNoIEFnZW50IOq1rOyEsSDtjIzsnbwg7IOd7ISxCiRjb25maWdQYXRoID0gIkM6XFByb2dyYW1EYXRhXEFtYXpvblxBbWF6b25DbG91ZFdhdGNoQWdlbnRcYXdzLWNsb3Vkd2F0Y2gtYWdlbnQuanNvbiIKJGNvbmZpZyA9IEAiCnsKICAiUGFyYW1ldGVycyI6IHsKICAgICJDb25maWd1cmF0aW9uUGF0aCI6ICJzc206Q2xvdWRXYXRjaC1EQlRlc3RMb2ciCiAgfQp9CiJACiRjb25maWcgfCBPdXQtRmlsZSAtRmlsZVBhdGggJGNvbmZpZ1BhdGggLUVuY29kaW5nIFVURjgKCiMgQ2xvdWRXYXRjaCBBZ2VudCDshJzruYTsiqQg7Iuc7J6RCiYgIkM6XFByb2dyYW0gRmlsZXNcQW1hem9uXEFtYXpvbkNsb3VkV2F0Y2hBZ2VudFxhbWF6b24tY2xvdWR3YXRjaC1hZ2VudC1jdGwucHMxIiAtYSBmZXRjaC1jb25maWcgLW0gZWMyIC1zIC1jIGZpbGU6JGNvbmZpZ1BhdGgKPC9wb3dlcnNoZWxsPg=="
+      BlockDeviceMappings:
+      - Ebs:
+          SnapshotId: "snap-00b91f7348b306d4e"
+          VolumeType: "gp3"
+          Iops: 3000
+          VolumeSize: 30
+          Encrypted: false
+          DeleteOnTermination: true
+        DeviceName: "/dev/sda1"
+      IamInstanceProfile:
+        Ref: "IAMInstanceProfile00MyTestRoleForEC200cHcYB"
+      SubnetId:
+        Ref: "EC2Subnet00subnet00c22ce20b776db4e00lChAd"
+      EbsOptimized: true
+      Volumes:
+      - VolumeId: "vol-09bd2ccf8c338ab99"
+        Device: "/dev/sda1"
+      NetworkInterfaces:
+      - PrivateIpAddresses:
+        - PrivateIpAddress: "172.31.2.110"
+          Primary: true
+        SecondaryPrivateIpAddressCount: 0
+        DeviceIndex: "0"
+        GroupSet:
+        - Ref: "EC2SecurityGroup00sg0d86ccc66a13f5b4600Ea2tP"
+        - Ref: "EC2SecurityGroup00sg05445c3fa1244f34d00z1iSZ"
+        - Ref: "EC2SecurityGroup00sg0829dab2b088ac6db00KmFNy"
+        - Ref: "EC2SecurityGroup00sg0843cfa0b3da7f38e00MS2X4"
+        Ipv6Addresses: []
+        SubnetId:
+          Ref: "EC2Subnet00subnet00c22ce20b776db4e00lChAd"
+        AssociatePublicIpAddress: false
+        NetworkInterfaceId:
+          Ref: "EC2NetworkInterface00eni077427ae6726ad43600yESON"
+        DeleteOnTermination: true
+      ImageId: "ami-07427619b8e8c799b"
+      InstanceType: "c6in.4xlarge"
+      Monitoring: false
+      Tags:
+      - Value: "Test-Middle #2"
+        Key: "Name"
+      - Value: "EC2"
+        Key: "MockupTestType"
+      InstanceInitiatedShutdownBehavior: "stop"
+      CpuOptions:
+        ThreadsPerCore: 2
+        CoreCount: 8
+      AvailabilityZone: "ap-northeast-2a"
+      PrivateDnsNameOptions:
+        EnableResourceNameDnsARecord: true
+        HostnameType: "ip-name"
+        EnableResourceNameDnsAAAARecord: false
+      SecurityGroupIds:
+      - "sg-0d86ccc66a13f5b46"
+      - "sg-05445c3fa1244f34d"
+      - "sg-0829dab2b088ac6db"
+      - "sg-0843cfa0b3da7f38e"
+      DisableApiTermination: false
+      KeyName: "EC2 Tutorial"
+      SourceDestCheck: true
+      PlacementGroupName: ""
+      VpcId: "vpc-0ba2471045a96a398"
+      State:
+        Code: "80"
+        Name: "stopped"
+      CreditSpecification:
+        CPUCredits: "standard"
+  EC2KeyPair00EC2Tutorial00FQFtc:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::EC2::KeyPair"
+    DeletionPolicy: "Delete"
+    Properties:
+      KeyName: "EC2 Tutorial"
+      KeyType: "rsa"
+      PublicKeyMaterial: "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQDJfnTpDuAzjy8RiFgjSfVX7BEka0g/+PfnF8u1/38fQRMM1xzQa7zGgMJt936EFWwg+ImGeAV5XCBlPruMZH+fYcEiNi7p+yBnLfNYX4HBIR6HcXwssp1lJLfj6r1s0eTvmVWtcmzQ4hw8EzSo28//m2nokomm93PpmD7GrkBmGSGjPoJX7qGhBC4lgceY7AJM7l6Cb+i+lBxAgsTd843hEB8RwRvp10c/Pc1IpVPQwwotCjZWXtmVSupKW9FyoLpa1OrbtW2XSwJAZY0SHEbjf81nujsZDfRTezaUr4754A5RJHj9slejXnvl6ibxVRRyVmn64wk2ZT6SE3RBy43l\
+        \ EC2 Tutorial\n"
+      Tags:
+      - Value: "KeyPair"
+        Key: "MockupTestType"
+  IAMRole00StepFunctionsMyStateMachine52ftupc97rolexvfgmrilr00ogBM8:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::IAM::Role"
+    DeletionPolicy: "Delete"
+    Properties:
+      Path: "/service-role/"
+      ManagedPolicyArns:
+      - "arn:aws:iam::aws:policy/CloudWatchEventsFullAccess"
+      - "arn:aws:iam::aws:policy/CloudWatchFullAccessV2"
+      - "arn:aws:iam::965037532757:policy/MySystemsManagerRoleFromLambda"
+      - "arn:aws:iam::965037532757:policy/service-role/XRayAccessPolicy-1fff2fa7-acdf-4dd1-a63b-9e0b5ea621a4"
+      - "arn:aws:iam::aws:policy/CloudWatchLogsFullAccess"
+      - "arn:aws:iam::aws:policy/AmazonEC2FullAccess"
+      - "arn:aws:iam::965037532757:policy/service-role/LambdaInvokeScopedAccessPolicy-51a469ec-878d-48e0-a88f-c5883b9bab50"
+      MaxSessionDuration: 3600
+      RoleName: "StepFunctions-MyStateMachine-52ftupc97-role-xvfgmrilr"
+      AssumeRolePolicyDocument:
+        Version: "2012-10-17"
+        Statement:
+        - Action: "sts:AssumeRole"
+          Effect: "Allow"
+          Principal:
+            Service: "states.amazonaws.com"
+  EC2Volume00vol0153693b55a8b6ca900jFFrh:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::EC2::Volume"
+    DeletionPolicy: "Delete"
+    Properties:
+      MultiAttachEnabled: false
+      SnapshotId: "snap-00b91f7348b306d4e"
+      VolumeType: "gp3"
+      Encrypted: true
+      Size: 30
+      AutoEnableIO: true
+      AvailabilityZone: "ap-northeast-2a"
+      Throughput: 125
+      Iops: 3000
+      Tags:
+      - Value: "EBS"
+        Key: "MockupTestType"
+  EC2Volume00vol026f05924114e5b6900ctD1C:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::EC2::Volume"
+    DeletionPolicy: "Delete"
+    Properties:
+      MultiAttachEnabled: false
+      SnapshotId: "snap-00b91f7348b306d4e"
+      VolumeType: "gp3"
+      Encrypted: true
+      Size: 30
+      AutoEnableIO: true
+      AvailabilityZone: "ap-northeast-2a"
+      Throughput: 125
+      Iops: 3000
+      Tags: []
+  EC2NetworkInterface00eni077427ae6726ad43600yESON:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::EC2::NetworkInterface"
+    DeletionPolicy: "Delete"
+    Properties:
+      Description: ""
+      PrivateIpAddress: "172.31.2.110"
+      PrivateIpAddresses:
+      - PrivateIpAddress: "172.31.2.110"
+        Primary: true
+      SecondaryPrivateIpAddressCount: 0
+      Ipv6PrefixCount: 0
+      Ipv4Prefixes: []
+      Ipv4PrefixCount: 0
+      GroupSet:
+      - "sg-0d86ccc66a13f5b46"
+      - "sg-05445c3fa1244f34d"
+      - "sg-0829dab2b088ac6db"
+      - "sg-0843cfa0b3da7f38e"
+      Ipv6Prefixes: []
+      SubnetId:
+        Ref: "EC2Subnet00subnet00c22ce20b776db4e00lChAd"
+      SourceDestCheck: true
+      InterfaceType: "interface"
+      Tags:
+      - Value: "ENI"
+        Key: "MockupTestType"
+  EC2VolumeAttachment00vol021447189d852454300x26pP:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::EC2::VolumeAttachment"
+    DeletionPolicy: "Delete"
+    Properties:
+      InstanceId: "i-0c17de5f318ea093f"
+      VolumeId: "vol-021447189d8524543"
+      Device: "/dev/sda1"
+  EC2VolumeAttachment00vol0d50769a3766f4307009DQ94:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::EC2::VolumeAttachment"
+    DeletionPolicy: "Delete"
+    Properties:
+      InstanceId: "i-05aee49c155bf690b"
+      VolumeId: "vol-0d50769a3766f4307"
+      Device: "/dev/sda1"
+  EC2SubnetNetworkAclAssociation00aclassoc0897eb7870022587e00Qw6dn:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::EC2::SubnetNetworkAclAssociation"
+    DeletionPolicy: "Delete"
+    Properties:
+      NetworkAclId:
+        Ref: "EC2NetworkAcl00acl09b97f26fc1bbaeac00oDCVL"
+      SubnetId:
+        Ref: "EC2Subnet00subnet00a347506ef4d8c1b00Z8Ptt"
+  EC2Volume00vol0ed426caa965a9ab4007bd1E:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::EC2::Volume"
+    DeletionPolicy: "Delete"
+    Properties:
+      MultiAttachEnabled: false
+      SnapshotId: "snap-00b91f7348b306d4e"
+      VolumeType: "gp3"
+      Encrypted: true
+      Size: 30
+      AutoEnableIO: true
+      AvailabilityZone: "ap-northeast-2a"
+      Throughput: 125
+      Iops: 3000
+      Tags: []
+  StepFunctionsStateMachine00stateMachineMyStateMachine52ftupc9700d2dJN:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::StepFunctions::StateMachine"
+    DeletionPolicy: "Delete"
+    Properties:
+      DefinitionString: "{\"Comment\":\"A description of my state machine\",\"StartAt\"\
+        :\"SendCommand\",\"States\":{\"SendCommand\":{\"Type\":\"Task\",\"Parameters\"\
+        :{\"InstanceIds\":[\"i-09b36d5fdf8548647\",\"i-087e0eb9541f856f9\",\"i-0d90a43554b71e17a\"\
+        ,\"i-06d9401060b8420ee\",\"i-03efd38ea8567fa29\",\"i-0097d640ec9ac5a60\",\"\
+        i-00a852d5e84be94a4\",\"i-0f3880cdd1c1a2e2a\",\"i-0bd4a5dbb5b6a1246\",\"i-08f4620aa8627ad62\"\
+        ,\"i-05aee49c155bf690b\",\"i-0c17de5f318ea093f\",\"i-096e9241cc85b54c0\",\"\
+        i-06690e537d52903df\",\"i-0f2b3777da392f4b5\"],\"DocumentName\":\"MyMockupServerTest\"\
+        },\"Resource\":\"arn:aws:states:::aws-sdk:ssm:sendCommand\",\"Next\":\"Lambda\
+        \ Invoke - Report\"},\"Lambda Invoke - Report\":{\"Type\":\"Task\",\"Resource\"\
+        :\"arn:aws:states:::lambda:invoke\",\"OutputPath\":\"$.Payload\",\"Parameters\"\
+        :{\"Payload.$\":\"$\",\"FunctionName\":\"arn:aws:lambda:ap-northeast-2:965037532757:function:mockupserver-test-report:$LATEST\"\
+        },\"Retry\":[{\"ErrorEquals\":[\"Lambda.ServiceException\",\"Lambda.AWSLambdaException\"\
+        ,\"Lambda.SdkClientException\",\"Lambda.TooManyRequestsException\",\"States.Timeout\"\
+        ,\"Sandbox.Timedout\"],\"IntervalSeconds\":1,\"MaxAttempts\":10,\"BackoffRate\"\
+        :2}],\"Next\":\"Lambda Invoke - Truncate\"},\"Lambda Invoke - Truncate\":{\"\
+        Type\":\"Task\",\"Resource\":\"arn:aws:states:::lambda:invoke\",\"OutputPath\"\
+        :\"$.Payload\",\"Parameters\":{\"FunctionName\":\"arn:aws:lambda:ap-northeast-2:965037532757:function:mockupserver-test-prerequisites:$LATEST\"\
+        ,\"Payload\":{\"ec2InstanceIds\":[\"i-09b36d5fdf8548647\",\"i-087e0eb9541f856f9\"\
+        ,\"i-0d90a43554b71e17a\",\"i-06d9401060b8420ee\",\"i-03efd38ea8567fa29\",\"\
+        i-0097d640ec9ac5a60\",\"i-00a852d5e84be94a4\",\"i-0f3880cdd1c1a2e2a\",\"i-0bd4a5dbb5b6a1246\"\
+        ,\"i-08f4620aa8627ad62\",\"i-05aee49c155bf690b\",\"i-0c17de5f318ea093f\",\"\
+        i-096e9241cc85b54c0\",\"i-06690e537d52903df\",\"i-0f2b3777da392f4b5\"]}},\"\
+        Retry\":[{\"ErrorEquals\":[\"Lambda.ServiceException\",\"Lambda.AWSLambdaException\"\
+        ,\"Lambda.SdkClientException\",\"Lambda.TooManyRequestsException\"],\"IntervalSeconds\"\
+        :1,\"MaxAttempts\":3,\"BackoffRate\":2}],\"End\":true}},\"TimeoutSeconds\"\
+        :6000}"
+      EncryptionConfiguration:
+        Type: "AWS_OWNED_KEY"
+      LoggingConfiguration:
+        IncludeExecutionData: false
+        Level: "OFF"
+      StateMachineName: "MyStateMachine-52ftupc97"
+      RoleArn:
+        Fn::GetAtt:
+        - "IAMRole00StepFunctionsMyStateMachine52ftupc97rolexvfgmrilr00ogBM8"
+        - "Arn"
+      Tags:
+      - Value: "Step Function"
+        Key: "MockupTestType"
+      StateMachineType: "STANDARD"
+      TracingConfiguration:
+        Enabled: false
+  EC2VolumeAttachment00vol09bd2ccf8c338ab9900yLTRl:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::EC2::VolumeAttachment"
+    DeletionPolicy: "Delete"
+    Properties:
+      InstanceId: "i-087e0eb9541f856f9"
+      VolumeId: "vol-09bd2ccf8c338ab99"
+      Device: "/dev/sda1"
+  EC2Subnet00subnet0cac5329f8bd685a40088tgQ:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::EC2::Subnet"
+    DeletionPolicy: "Delete"
+    Properties:
+      VpcId:
+        Ref: "EC2VPC00vpc0ba2471045a96a398003Ek3v"
+      MapPublicIpOnLaunch: false
+      EnableDns64: false
+      AvailabilityZoneId: "apne2-az3"
+      PrivateDnsNameOptionsOnLaunch:
+        EnableResourceNameDnsARecord: false
+        HostnameType: "ip-name"
+        EnableResourceNameDnsAAAARecord: false
+      CidrBlock: "172.31.65.0/25"
+      Ipv6Native: false
+      Tags:
+      - Value: "Subnet for RDS"
+        Key: "MockupTestType"
+      - Value: "RDS-Pvt-subnet-3"
+        Key: "Name"
+  EC2VolumeAttachment00vol0b7acc03c9ea2c7a500ZMOy8:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::EC2::VolumeAttachment"
+    DeletionPolicy: "Delete"
+    Properties:
+      InstanceId: "i-06d9401060b8420ee"
+      VolumeId: "vol-0b7acc03c9ea2c7a5"
+      Device: "/dev/sda1"
+  IAMInstanceProfile00MyTestRoleForEC200cHcYB:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::IAM::InstanceProfile"
+    DeletionPolicy: "Delete"
+    Properties:
+      Path: "/"
+      Roles:
+      - Ref: "IAMRole00MyTestRoleForEC200Bw2b9"
+      InstanceProfileName:
+        Ref: "IAMRole00MyTestRoleForEC200Bw2b9"
+  EC2VolumeAttachment00vol0153693b55a8b6ca900shK9g:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::EC2::VolumeAttachment"
+    DeletionPolicy: "Delete"
+    Properties:
+      InstanceId: "i-0d90a43554b71e17a"
+      VolumeId: "vol-0153693b55a8b6ca9"
+      Device: "/dev/sda1"
+  EC2SecurityGroup00sg0843cfa0b3da7f38e00MS2X4:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::EC2::SecurityGroup"
+    DeletionPolicy: "Delete"
+    Properties:
+      GroupDescription: "Security group attached to instances to securely connect\
+        \ to mysql-test. Modification could lead to connection loss."
+      GroupName: "ec2-rds-4"
+      VpcId:
+        Ref: "EC2VPC00vpc0ba2471045a96a398003Ek3v"
+      SecurityGroupEgress:
+      - IpProtocol: "tcp"
+        DestinationSecurityGroupId:
+          Fn::GetAtt:
+          - "EC2SecurityGroup00sg0c9b5fd827d50d88500qAo0o"
+          - "GroupId"
+        Description: "Rule to allow connections to mysql-test from any instances this\
+          \ security group is attached to"
+        FromPort: 3306
+        ToPort: 3306
+  LambdaFunction00mockupservertestreport00PvArv:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::Lambda::Function"
+    DeletionPolicy: "Delete"
+    Properties:
+      MemorySize: 2048
+      Description: ""
+      TracingConfig:
+        Mode: "PassThrough"
+      VpcConfig:
+        SecurityGroupIds: []
+        SubnetIds: []
+        Ipv6AllowedForDualStack: false
+      Timeout: 900
+      RuntimeManagementConfig:
+        UpdateRuntimeOn: "Auto"
+      Handler: "mockupserver-report::mockupserver_report.Function::FunctionHandler"
+      Code:
+        SourceKMSKeyArn:
+          Ref: "LambdaFunction00mockupservertestreport00PvArvCodeSourceKMSKeyArnjamfu"
+        S3ObjectVersion:
+          Ref: "LambdaFunction00mockupservertestreport00PvArvCodeS3ObjectVersionMwExV"
+        S3Bucket:
+          Ref: "LambdaFunction00mockupservertestreport00PvArvCodeS3Bucket721TM"
+        ZipFile:
+          Ref: "LambdaFunction00mockupservertestreport00PvArvCodeZipFileOjC3T"
+        ImageUri:
+          Ref: "LambdaFunction00mockupservertestreport00PvArvCodeImageUritFQF5"
+        S3Key:
+          Ref: "LambdaFunction00mockupservertestreport00PvArvCodeS3KeyaOoaw"
+      Role: "arn:aws:iam::965037532757:role/MyMockupReportingRole"
+      FileSystemConfigs: []
+      FunctionName: "mockupserver-test-report"
+      Runtime: "dotnet8"
+      PackageType: "Zip"
+      LoggingConfig:
+        LogFormat: "Text"
+        LogGroup: "/aws/lambda/mockupserver-test-report"
+      RecursiveLoop: "Terminate"
+      EphemeralStorage:
+        Size: 5000
+      Tags:
+      - Value: "Lambda Function"
+        Key: "MockupTestType"
+      Architectures:
+      - "arm64"
+  EC2Subnet00subnet00a347506ef4d8c1b00Z8Ptt:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::EC2::Subnet"
+    DeletionPolicy: "Delete"
+    Properties:
+      VpcId:
+        Ref: "EC2VPC00vpc0ba2471045a96a398003Ek3v"
+      MapPublicIpOnLaunch: false
+      EnableDns64: false
+      AvailabilityZoneId: "apne2-az2"
+      PrivateDnsNameOptionsOnLaunch:
+        EnableResourceNameDnsARecord: false
+        HostnameType: "ip-name"
+        EnableResourceNameDnsAAAARecord: false
+      CidrBlock: "172.31.64.128/25"
+      Ipv6Native: false
+      Tags:
+      - Value: "Subnet for RDS"
+        Key: "MockupTestType"
+      - Value: "RDS-Pvt-subnet-2"
+        Key: "Name"
+  EC2Volume00vol0919c67d6aeeba28000Wza4a:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::EC2::Volume"
+    DeletionPolicy: "Delete"
+    Properties:
+      MultiAttachEnabled: false
+      SnapshotId: "snap-0b316d2290e49bcdb"
+      VolumeType: "gp3"
+      Encrypted: true
+      Size: 30
+      AutoEnableIO: true
+      AvailabilityZone: "ap-northeast-2a"
+      Throughput: 125
+      Iops: 3000
+      Tags: []
+  EC2VolumeAttachment00vol03d4a5a8c59079e0b00zo00L:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::EC2::VolumeAttachment"
+    DeletionPolicy: "Delete"
+    Properties:
+      InstanceId: "i-09b36d5fdf8548647"
+      VolumeId: "vol-03d4a5a8c59079e0b"
+      Device: "/dev/sda1"
+  EC2Volume00vol0fd0dcf43caa26f8500q5SET:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::EC2::Volume"
+    DeletionPolicy: "Delete"
+    Properties:
+      MultiAttachEnabled: false
+      SnapshotId: "snap-0bde65eebe7cb79b2"
+      VolumeType: "gp2"
+      Encrypted: true
+      Size: 30
+      AutoEnableIO: true
+      AvailabilityZone: "ap-northeast-2a"
+      Iops: 100
+      Tags: []
+  EC2Volume00vol0d50769a3766f430700CP7zG:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::EC2::Volume"
+    DeletionPolicy: "Delete"
+    Properties:
+      MultiAttachEnabled: false
+      SnapshotId: "snap-0b316d2290e49bcdb"
+      VolumeType: "gp3"
+      Encrypted: true
+      Size: 50
+      AutoEnableIO: true
+      AvailabilityZone: "ap-northeast-2a"
+      Throughput: 125
+      Iops: 3000
+      Tags: []
+  EC2SubnetNetworkAclAssociation00aclassoc04be52fb4b8965e0f00Otqfs:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::EC2::SubnetNetworkAclAssociation"
+    DeletionPolicy: "Delete"
+    Properties:
+      NetworkAclId:
+        Ref: "EC2NetworkAcl00acl09b97f26fc1bbaeac00oDCVL"
+      SubnetId:
+        Ref: "EC2Subnet00subnet00c22ce20b776db4e00lChAd"
+  EC2Instance00i096e9241cc85b54c000DUmrA:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::EC2::Instance"
+    DeletionPolicy: "Delete"
+    Properties:
+      Tenancy: "default"
+      SecurityGroups:
+      - "launch-wizard-5"
+      - "ec2-rds-2"
+      PrivateIpAddress: "172.31.4.21"
+      UserData: "PHBvd2Vyc2hlbGw+CiMgLk5FVCBDb3JlIFJ1bnRpbWUg7ISk7LmYCiRkb3ROZXRDb3JlSW5zdGFsbGVyVXJpID0gImh0dHBzOi8vZG90bmV0d2VicmVsZWFzZXN0b3JhZ2UuYmxvYi5jb3JlLndpbmRvd3MubmV0L3J1bnRpbWUvMy4xLjMyL2RvdG5ldC1ydW50aW1lLTMuMS4zMi13aW4teDY0LmV4ZSIKJGRvdE5ldENvcmVJbnN0YWxsZXJEaXIgPSAiJGVudjpURU1QXGRvdG5ldC1pbnN0YWxsZXIiCiRkb3ROZXRDb3JlSW5zdGFsbGVyRmlsZSA9ICIkZG90TmV0Q29yZUluc3RhbGxlckRpclxkb3RuZXQtcnVudGltZS0zLjEuMzItd2luLXg2NC5leGUiCk5ldy1JdGVtIC1JdGVtVHlwZSBEaXJlY3RvcnkgLVBhdGggJGRvdE5ldENvcmVJbnN0YWxsZXJEaXIKSW52b2tlLVdlYlJlcXVlc3QgLVVyaSAkZG90TmV0Q29yZUluc3RhbGxlclVyaSAtT3V0RmlsZSAkZG90TmV0Q29yZUluc3RhbGxlckZpbGUKU3RhcnQtUHJvY2VzcyAtRmlsZVBhdGggJGRvdE5ldENvcmVJbnN0YWxsZXJGaWxlIC1BcmdzICIvaW5zdGFsbCAvcXVpZXQgL25vcmVzdGFydCIgLVdhaXQKCiMgQVdTIFRvb2xzIGZvciBQb3dlclNoZWxsIOyEpOy5mApJbnN0YWxsLU1vZHVsZSAtTmFtZSBBV1NQb3dlclNoZWxsLk5ldENvcmUgLUZvcmNlCgojIFBvd2VyU2hlbGwg7Iuk7ZaJIOygleyxhSDshKTsoJUKU2V0LUV4ZWN1dGlvblBvbGljeSBSZW1vdGVTaWduZWQKCiMgSW5zdGFsbCBBV1MgVG9vbHMKJFByb2dyZXNzUHJlZmVyZW5jZSA9ICdTaWxlbnRseUNvbnRpbnVlJwpta2RpciBDOlxQcm9ncmFtRGF0YVxBbWF6b25cQW1hem9uQVdTQWdlbnRzIC1Gb3JjZQpJbnZva2UtV2ViUmVxdWVzdCAtVXJpIGh0dHBzOi8vczMuYW1hem9uYXdzLmNvbS9lYzItZG93bmxvYWRzLXdpbmRvd3MvQW1hem9uQVdTQWdlbnRzLnppcCAtT3V0RmlsZSBDOlxQcm9ncmFtRGF0YVxBbWF6b25cQW1hem9uQVdTQWdlbnRzXEFtYXpvbkFXU0FnZW50cy56aXAKRXhwYW5kLUFyY2hpdmUgLVBhdGggQzpcUHJvZ3JhbURhdGFcQW1hem9uXEFtYXpvbkFXU0FnZW50c1xBbWF6b25BV1NBZ2VudHMuemlwIC1EZXN0aW5hdGlvblBhdGggQzpcUHJvZ3JhbURhdGFcQW1hem9uXEFtYXpvbkFXU0FnZW50cyAtRm9yY2UKJGVudjpQYXRoICs9ICI7QzpcUHJvZ3JhbURhdGFcQW1hem9uXEFtYXpvbkFXU0FnZW50cyIKCiMgSW5zdGFsbCBTU00gQWdlbnQKU3RhcnQtUHJvY2VzcyAtRmlsZVBhdGggQzpcUHJvZ3JhbURhdGFcQW1hem9uXEFtYXpvbkFXU0FnZW50c1xBbWF6b25TU01BZ2VudC5leGUgLUFyZ3VtZW50TGlzdCAiL0luc3RhbGwgL1F1aWV0IiAtV2FpdAoKIyBDb25maWd1cmUgQ2xvdWRXYXRjaCBBZ2VudAokY3dBZ2VudENvbmZpZyA9IEAiCnsKICAibG9ncyI6IHsKICAgICJsb2dzX2NvbGxlY3RlZCI6IHsKICAgICAgImZpbGVzIjogewogICAgICAgICJjb2xsZWN0X2xpc3QiOiBbCiAgICAgICAgICB7CiAgICAgICAgICAgICJmaWxlX3BhdGgiOiAiQzpcXHRlc3RjbGllbnRcXGF1cm9yYVxcbG9nLnR4dCIsCiAgICAgICAgICAgICJsb2dfZ3JvdXBfbmFtZSI6ICJhdXJvcmEtdGVzdC1ncm91cCIsCiAgICAgICAgICAgICJsb2dfc3RyZWFtX25hbWUiOiAie2luc3RhbmNlX2lkfSIKICAgICAgICAgIH0sCiAgICAgICAgICB7CiAgICAgICAgICAgICJmaWxlX3BhdGgiOiAiQzpcXHRlc3RjbGllbnRcXG1zc3FsXFxsb2cudHh0IiwKICAgICAgICAgICAgImxvZ19ncm91cF9uYW1lIjogIm1zc3FsLXRlc3QtZ3JvdXAiLAogICAgICAgICAgICAibG9nX3N0cmVhbV9uYW1lIjogIntpbnN0YW5jZV9pZH0iCiAgICAgICAgICB9CiAgICAgICAgXQogICAgICB9CiAgICB9CiAgfQp9CiJACgokY3dBZ2VudENvbmZpZyB8IE91dC1GaWxlIC1GaWxlUGF0aCBDOlxQcm9ncmFtRGF0YVxBbWF6b25cQW1hem9uQVdTQWdlbnRzXGNvbmZpZy5qc29uIC1FbmNvZGluZyBBU0NJSSAtRm9yY2UKCiMgSW5zdGFsbCBDbG91ZFdhdGNoIEFnZW50ClN0YXJ0LVByb2Nlc3MgLUZpbGVQYXRoIEM6XFByb2dyYW1EYXRhXEFtYXpvblxBbWF6b25BV1NBZ2VudHNcQW1hem9uQ2xvdWRXYXRjaEFnZW50LmV4ZSAtQXJndW1lbnRMaXN0ICIvSW5zdGFsbCAvUXVpZXQiIC1XYWl0CgojIFN0YXJ0IENsb3VkV2F0Y2ggQWdlbnQKU3RhcnQtU2VydmljZSAtTmFtZSBBbWF6b25DbG91ZFdhdGNoQWdlbnQKPC9wb3dlcnNoZWxsPg=="
+      BlockDeviceMappings:
+      - Ebs:
+          SnapshotId: "snap-0b316d2290e49bcdb"
+          VolumeType: "gp3"
+          Iops: 3000
+          VolumeSize: 30
+          Encrypted: false
+          DeleteOnTermination: true
+        DeviceName: "/dev/sda1"
+      IamInstanceProfile:
+        Ref: "IAMInstanceProfile00MyTestRoleForEC200cHcYB"
+      SubnetId:
+        Ref: "EC2Subnet00subnet00c22ce20b776db4e00lChAd"
+      EbsOptimized: true
+      Volumes:
+      - VolumeId: "vol-0919c67d6aeeba280"
+        Device: "/dev/sda1"
+      NetworkInterfaces:
+      - PrivateIpAddresses:
+        - PrivateIpAddress: "172.31.4.21"
+          Primary: true
+        SecondaryPrivateIpAddressCount: 0
+        DeviceIndex: "0"
+        GroupSet:
+        - Ref: "EC2SecurityGroup00sg0d86ccc66a13f5b4600Ea2tP"
+        - Ref: "EC2SecurityGroup00sg0829dab2b088ac6db00KmFNy"
+        Ipv6Addresses: []
+        SubnetId:
+          Ref: "EC2Subnet00subnet00c22ce20b776db4e00lChAd"
+        AssociatePublicIpAddress: false
+        NetworkInterfaceId:
+          Ref: "EC2NetworkInterface00eni05cc29c3f124324bb00fIZY0"
+        DeleteOnTermination: true
+      ImageId: "ami-0d159154c576c21c3"
+      InstanceType: "c6in.4xlarge"
+      Monitoring: false
+      Tags:
+      - Value: "Test-Middle #13"
+        Key: "Name"
+      InstanceInitiatedShutdownBehavior: "stop"
+      CpuOptions:
+        ThreadsPerCore: 2
+        CoreCount: 8
+      AvailabilityZone: "ap-northeast-2a"
+      PrivateDnsNameOptions:
+        EnableResourceNameDnsARecord: true
+        HostnameType: "ip-name"
+        EnableResourceNameDnsAAAARecord: false
+      SecurityGroupIds:
+      - "sg-0d86ccc66a13f5b46"
+      - "sg-0829dab2b088ac6db"
+      DisableApiTermination: false
+      KeyName: "EC2 Tutorial"
+      SourceDestCheck: true
+      PlacementGroupName: ""
+      VpcId: "vpc-0ba2471045a96a398"
+      State:
+        Code: "80"
+        Name: "stopped"
+      CreditSpecification:
+        CPUCredits: "standard"
+  EC2Subnet00subnet028db0476341bf4c300VfQWm:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::EC2::Subnet"
+    DeletionPolicy: "Delete"
+    Properties:
+      VpcId:
+        Ref: "EC2VPC00vpc0ba2471045a96a398003Ek3v"
+      MapPublicIpOnLaunch: true
+      EnableDns64: false
+      AvailabilityZoneId: "apne2-az3"
+      PrivateDnsNameOptionsOnLaunch:
+        EnableResourceNameDnsARecord: false
+        HostnameType: "ip-name"
+        EnableResourceNameDnsAAAARecord: false
+      CidrBlock: "172.31.32.0/20"
+      Ipv6Native: false
+      Tags:
+      - Value: "Subnet"
+        Key: "MockupTestType"
+  IAMManagedPolicy00policyserviceroleXRayAccessPolicy1fff2fa7acdf4dd1a63b9e0b5ea621a400W2qDz:
+    UpdateReplacePolicy: "Retain"
+    Type: "AWS::IAM::ManagedPolicy"
+    DeletionPolicy: "Delete"
+    Properties:
+      ManagedPolicyName: "XRayAccessPolicy-1fff2fa7-acdf-4dd1-a63b-9e0b5ea621a4"
+      Path: "/service-role/"
+      Description: "Allow AWS Step Functions to call X-Ray daemon on your behalf"
+      Groups: []
+      PolicyDocument:
+        Version: "2012-10-17"
+        Statement:
+        - Resource:
+          - "*"
+          Action:
+          - "xray:PutTraceSegments"
+          - "xray:PutTelemetryRecords"
+          - "xray:GetSamplingRules"
+          - "xray:GetSamplingTargets"
+          Effect: "Allow"
+      Roles:
+      - Ref: "IAMRole00StepFunctionsMyStateMachine52ftupc97rolexvfgmrilr00ogBM8"
+      Users: []
